@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AIA Outbound Dashboard · 30 Mar 2026 · EOD</title>
+<title>AIA Outbound Dashboard · 31 Mar 2026 · EOD · FY End</title>
 <style>
 :root{--navy:#1B2A4A;--gold:#F5A623;--green:#1A7A4A;--gbg:#E8F5EE;--red:#C0392B;--rbg:#FDEDEC;--amb:#D4891A;--abg:#FEF4E4;--blue:#1A5276;--bbg:#EBF5FB;--purp:#6C3483;--pbg:#F5EEF8;--grey:#F7F8FB;--bord:#E2E8F0;--muted:#64748B;--teal:#0E7490;--tealbg:#ECFEFF}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -32,8 +32,6 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#EAECF2;color:#1A1A2E;fo
 .stitle{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.4px;text-transform:uppercase}
 .sec-body{padding:12px 14px}
 .kgrid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
-.kgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.kgrid5{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .kc{background:var(--grey);border:1px solid var(--bord);border-radius:8px;padding:9px 10px;text-align:center}
 .kc.gg{border-color:var(--green);background:var(--gbg)}.kc.rr{border-color:#E74C3C;background:var(--rbg)}
 .kc.pp{border-color:var(--purp);background:var(--pbg)}.kc.bb{border-color:var(--blue);background:var(--bbg)}
@@ -50,7 +48,7 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
 .tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600}
 .tg{background:var(--gbg);color:var(--green)}.tr2{background:var(--rbg);color:var(--red)}
 .ta{background:var(--abg);color:var(--amb)}.tb{background:var(--bbg);color:var(--blue)}
-.tp{background:var(--pbg);color:var(--purp)}.tgr{background:#F0F0F0;color:#555}.tgold{background:#FFF9ED;color:var(--gold)}
+.tp{background:var(--pbg);color:var(--purp)}.tgr{background:#F0F0F0;color:#555}
 .pb2{display:flex;align-items:center;gap:8px}.pb{flex:1;height:7px;background:#E8ECF5;border-radius:3px;overflow:hidden}
 .pb-f{height:100%;border-radius:3px}.pv{font-size:11px;font-weight:700;min-width:36px;text-align:right}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -60,7 +58,6 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
 .ir{background:#FEF2F2;border:1px solid #FECACA;color:#7f1d1d}
 .ia{background:var(--abg);border:1px solid #FDE68A;color:#78350f}
 .ib{background:#eef2ff;border:1px solid #C7D2FE;color:#2c3e8c}
-.ip{background:var(--pbg);border:1px solid #DDD6FE;color:#4c1d95}
 .ac{border-radius:0 8px 8px 0;padding:9px 13px;margin-bottom:7px;border:1px solid;border-left-width:4px}
 .ac.crit{border-color:#FECACA;border-left-color:var(--red);background:#FEF2F2}
 .ac.warn{border-color:#FDE68A;border-left-color:var(--amb);background:var(--abg)}
@@ -75,7 +72,8 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
 .dc2.warn{border-left:3px solid var(--amb);background:var(--abg);border-radius:0 8px 8px 0}
 .dc2.crit{border-left:3px solid var(--red);background:var(--rbg);border-radius:0 8px 8px 0}
 .dc2.info{border-left:3px solid var(--blue);background:var(--bbg);border-radius:0 8px 8px 0}
-.dc2.ign{border-left:3px solid #999;background:#f5f5f5;border-radius:0 8px 8px 0;opacity:.75}
+.dc2.ign{border-left:3px solid #94a3b8;background:#F8FAFC;border-radius:0 8px 8px 0;opacity:.8}
+.dc2.new{border-left:3px solid var(--purp);background:var(--pbg);border-radius:0 8px 8px 0}
 .dn{font-size:13px;font-weight:700;margin-bottom:2px}.dm{font-size:11px;color:var(--muted);margin-bottom:3px}
 .db{font-size:12px;line-height:1.4;color:#334155;margin-bottom:3px}.da{font-size:11px;font-weight:700}
 .pl{list-style:none}
@@ -87,129 +85,156 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
 .fb{flex:1;text-align:center;padding:8px 4px;border-right:0.5px solid var(--bord);background:var(--grey)}
 .fb:last-child{border-right:none}.fn{font-size:20px;font-weight:800}.fl{font-size:10px;color:var(--muted);text-transform:uppercase;margin-top:2px}.fp{font-size:10px;font-weight:600;margin-top:1px}
 .snap{font-size:11px;color:var(--muted);padding:6px 0;border-top:1px solid var(--bord);margin-top:8px;line-height:1.5}
+.trend-strip{display:flex;gap:0;border-radius:8px;overflow:hidden;border:0.5px solid var(--bord);margin-bottom:10px}
+.td2{flex:1;text-align:center;padding:8px 4px;border-right:0.5px solid var(--bord);background:var(--grey)}
+.td2:last-child{border-right:none;background:linear-gradient(135deg,#1B2A4A,#2E4070)}
+.tdl{font-size:10px;color:var(--muted);font-weight:600}.tdc{font-size:16px;font-weight:800;margin:2px 0}.tda{font-size:10px;color:var(--muted)}
+.td2:last-child .tdl,.td2:last-child .tda{color:#90CAF9}.td2:last-child .tdc{color:var(--gold);font-size:18px}
 .footer{background:var(--navy);color:#fff;padding:10px 24px;font-size:11px;display:flex;justify-content:space-between;align-items:center}
 .fpill{background:rgba(255,255,255,.12);padding:3px 9px;border-radius:10px;font-size:10px;margin:2px}
-.sig-chip{display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:10px;font-size:11px;font-weight:600;margin:2px}
-.sig-max{background:#EAF3DE;color:#27500A;border:1px solid #A7D98D}
-.sig-high{background:#EBF5FB;color:#1A5276;border:1px solid #90C8E8}
-.sig-med{background:#FEF4E4;color:#854F0B;border:1px solid #F4C97A}
-.sig-disc{background:#FDEDEC;color:#C0392B;border:1px solid #F5C0B8}
-.src-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid #F0F4F8}
+.delta-pos{color:var(--green);font-weight:700;font-size:10px}
+.delta-neg{color:var(--red);font-weight:700;font-size:10px}
+.delta-neu{color:var(--muted);font-size:10px}
+.src-row{display:flex;align-items:center;gap:10px;padding:6px 0;border-bottom:1px solid #F0F4F8}
 .src-row:last-child{border-bottom:none}
-.src-name{font-size:12px;font-weight:600;min-width:180px}
-.src-bar{flex:1;height:8px;background:#E8ECF5;border-radius:4px;overflow:hidden}
-.src-bf{height:100%;border-radius:4px}
+.src-name{font-size:12px;font-weight:600;min-width:160px}
+.src-bar{flex:1;height:7px;background:#E8ECF5;border-radius:3px;overflow:hidden}
+.src-bf{height:100%;border-radius:3px}
 .src-val{font-size:12px;font-weight:700;min-width:30px;text-align:right}
-.donut-wrap{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.legend{display:flex;flex-direction:column;gap:4px}
-.leg-item{display:flex;align-items:center;gap:6px;font-size:11px}
-.leg-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
 </style>
 </head>
 <body>
 
 <div class="nav">
-  <div class="ntab active" onclick="sw('p1',this)">Main Dashboard · Mon 30 Mar EOD</div>
+  <div class="ntab active" onclick="sw('p1',this)">Main Dashboard · Tue 31 Mar EOD</div>
   <div class="ntab" onclick="sw('p2',this)">BD Performance</div>
-  <div class="ntab" onclick="sw('p3',this)">Focus · Ignore · Signals</div>
-  <div class="ntab" onclick="sw('p4',this)">New Source · Mar 18–30</div>
+  <div class="ntab" onclick="sw('p3',this)">Focus · Ignore · New Signals</div>
+  <div class="ntab" onclick="sw('p4',this)">New Source · Mar 18–31</div>
 </div>
 
-<!-- ═══ PAGE 1: MAIN DASHBOARD ═══ -->
+<!-- ══════ PAGE 1: MAIN ══════ -->
 <div class="page active" id="p1">
 <div class="hd">
   <div style="display:flex;justify-content:space-between;align-items:flex-start">
     <div>
-      <div class="hd-title">AIA <span>Outbound Dashboard</span> <span style="font-size:13px;font-weight:500;opacity:.5">· Mon 30 Mar 2026 · EOD</span></div>
-      <div class="hd-sub">EXPORT: 30 Mar 2026 · 1,163 total deals · 81 new source leads (Mar 18+) · W4 Day 1</div>
+      <div class="hd-title">AIA <span>Outbound Dashboard</span> <span style="font-size:13px;font-weight:500;opacity:.4">· Tue 31 Mar 2026 · FY END · EOD</span></div>
+      <div class="hd-sub">EXPORT: 31 Mar 2026 · 1,182 total deals (+19 today) · 81 touched today · FY end — highest intent window</div>
     </div>
     <div style="text-align:right">
-      <div class="bdg bdg-green" style="font-size:11px;padding:5px 12px">Amaraa Fragrances → SQL today · unwood revised SOW sent</div>
+      <div class="bdg bdg-green" style="font-size:11px;padding:5px 12px">unwood → ATP 🎯 · cheerbox + aekart new buying signals</div>
       <br>
-      <div class="bdg bdg-red" style="margin-top:4px">petvillepetstore ATP still unresponsive · inkup+Aravi payment pending April 1</div>
+      <div class="bdg bdg-red" style="margin-top:4px">petvillepetstore: BOTH founders DNP · houseofkosha parked · yuderma 8d silent</div>
     </div>
   </div>
   <div class="hd-badges">
-    <span class="bdg bdg-green">₹15,000 collected all-time (3 PD)</span>
-    <span class="bdg bdg-purp">4 ATPs outstanding → target ₹20k April 1st week</span>
-    <span class="bdg bdg-gold">3 SQL · 3 DC · 3 DS in active pipeline</span>
-    <span class="bdg bdg-red">Discard rate: 63.5% of all leads</span>
-    <span class="bdg bdg-blue">Mar 18+ batch: 73.5% discard/DNP rate</span>
-    <span class="bdg bdg-red">Pranshu: 0 ATP/PD all-time · needs focus</span>
+    <span class="bdg bdg-green">unwood.in → ATP #5 (Sriharan · F2F trust deal)</span>
+    <span class="bdg bdg-purp">5 ATPs now → ₹25k potential April 1st week</span>
+    <span class="bdg bdg-gold">bluemonkey.in → DS (Pranshu · multi-channel D2C)</span>
+    <span class="bdg bdg-red">houseofkosha DC → Parked · "not required right now"</span>
+    <span class="bdg bdg-blue">experiencenoir DC done but weak — "nice to have not must-have"</span>
+    <span class="bdg bdg-red">petvillepetstore: 6d unresponsive · both founders DNP today</span>
   </div>
 </div>
 
 <div class="abar">
-  <div class="al"><span class="al-ico">🎯</span><div><strong>Amaraa Fragrances → SQL today (Raksha).</strong> Amita managing everything solo via Excel — classic 0-finance-person ICP. Proposal sent. Demo target this week.</div></div>
-  <div class="al"><span class="al-ico">📄</span><div><strong>unwood.in — Revised SOW sent today (Sriharan).</strong> F2F meeting done, Vishal reviewing over weekend. Strong intent. FU call Tuesday Apr 1.</div></div>
-  <div class="al"><span class="al-ico">🟡</span><div><strong>petvillepetstore ATP — unresponsive since Mar 25.</strong> NDA/T&C issue. Karan DNP, WA sent. 5 days no response. Last attempt before parking.</div></div>
-  <div class="al"><span class="al-ico">🔴</span><div><strong>humanhydro DC → still not SQL.</strong> Zulfikar post-travel, co-founder confused on Tally integration. Needs call post-Tuesday Apr 1.</div></div>
-  <div class="al"><span class="al-ico">🟡</span><div><strong>orae.in SQL — demo still not locked.</strong> Pranshu sent WA follow-up today. Shubham busy at home. Demo pending with accounts team.</div></div>
-  <div class="al"><span class="al-ico">🔴</span><div><strong>NextLeap Aeronautics DS — ICP miss.</strong> 4 accountants + 2 auditors + 1 CA in-house. Must be moved to Parked immediately. Do not run demo.</div></div>
+  <div class="al"><span class="al-ico">🎯</span><div><strong>unwood.in → ATP (Sriharan).</strong> Year-end meeting today. Vishal confirmed he'll callback after March 31. F2F visit + revised SOW = strong trust. ATP #5. Target payment: April 1-3 alongside Aravi + inkup.</div></div>
+  <div class="al"><span class="al-ico">🟢</span><div><strong>cheerbox.in new buying signal (Raksha).</strong> "Manually tracking is something she wants to solve." First clear intent statement from this lead. Direct demo ask now.</div></div>
+  <div class="al"><span class="al-ico">🟢</span><div><strong>aekart.in new buying signal (Raksha).</strong> "Managing everything through Excel and it is a lot of spreadsheets." Classic pain confession. Ready for demo.</div></div>
+  <div class="al"><span class="al-ico">🔴</span><div><strong>houseofkosha DC → Parked.</strong> Shagun (co-founder + finance): "not required at the moment, maybe next quarter or the one after." Lost from DC. Re-engage June. Monitor for new marketplace/job post.</div></div>
+  <div class="al"><span class="al-ico">🟡</span><div><strong>experiencenoir DC — weak.</strong> Demo done but "nice to have not must-have." Pricing pushback vs existing accountant cost. Human-led preference over tool. High park risk.</div></div>
+  <div class="al"><span class="al-ico">🔴</span><div><strong>petvillepetstore ATP — both founders DNP today.</strong> Divyanshu + Karan both unresponsive. 6 days total. NDA not resolved. Last attempt tomorrow before parking ATP.</div></div>
+  <div class="al"><span class="al-ico">🟡</span><div><strong>fyn-x.com FY-end re-engage window opens tomorrow (Apr 1).</strong> Ankita committed "after March 31 I'll contact Kunal." April 1 call is now due. Pranshu must call in the morning.</div></div>
 </div>
 
 <div class="main">
 
-<!-- KPIs -->
+<!-- STAGE DELTA -->
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">R1</span><span class="stitle">Overall Pipeline Funnel · 1,163 Total Deals</span></div>
+  <div class="sec-hd"><span class="sbadge">R1</span><span class="stitle">Pipeline KPIs · Tue 31 Mar EOD vs Mon 30 Mar EOD</span></div>
   <div class="sec-body">
-    <div class="funnel" style="margin-bottom:10px">
-      <div class="fb"><div class="fn" style="color:#1A5276">1163</div><div class="fl">Total Deals</div><div class="fp">all time</div></div>
-      <div class="fb"><div class="fn" style="color:#854F0B">261</div><div class="fl">Active Pipeline</div><div class="fp">excl disc/DNP</div></div>
-      <div class="fb"><div class="fn" style="color:#1A7A4A">68</div><div class="fl">Warm</div><div class="fp">FU+CB</div></div>
-      <div class="fb"><div class="fn" style="color:#6C3483">9</div><div class="fl">Revenue Stage</div><div class="fp">DS+DC+SQL</div></div>
-      <div class="fb"><div class="fn" style="color:#F5A623">4</div><div class="fl">ATP</div><div class="fp">agreed to pay</div></div>
-      <div class="fb"><div class="fn" style="color:#1A7A4A">3</div><div class="fl">Payment Done</div><div class="fp">₹15,000</div></div>
-      <div class="fb"><div class="fn" style="color:#C0392B">738</div><div class="fl">Discarded</div><div class="fp">63.5% of all</div></div>
-    </div>
     <div class="kgrid">
-      <div class="kc"><div class="kv a">136</div><div class="klbl">MQL</div><div class="kd neu">unworked</div></div>
-      <div class="kc rr"><div class="kv r">738</div><div class="klbl">Discarded</div><div class="kd neg">63.5%</div></div>
-      <div class="kc rr"><div class="kv r">156</div><div class="klbl">DNP</div><div class="kd neg">13.4%</div></div>
-      <div class="kc"><div class="kv b">44</div><div class="klbl">Follow-up</div><div class="kd neu">active warm</div></div>
-      <div class="kc gg"><div class="kv g">24</div><div class="klbl">Call Back</div><div class="kd pos">hot queue</div></div>
-      <div class="kc"><div class="kv">49</div><div class="klbl">Parked</div><div class="kd neu">future req</div></div>
-      <div class="kc"><div class="kv">3</div><div class="klbl">Demo Sched</div><div class="kd neg">1 ICP miss</div></div>
+      <div class="kc"><div class="kv a">131</div><div class="klbl">MQL</div><div class="kd neg">−5 (dialled down)</div></div>
+      <div class="kc rr"><div class="kv r">755</div><div class="klbl">Discard</div><div class="kd neg">+17 today</div></div>
+      <div class="kc rr"><div class="kv r">161</div><div class="klbl">DNP</div><div class="kd neg">+5 today</div></div>
+      <div class="kc bb"><div class="kv b">46</div><div class="klbl">Follow-up</div><div class="kd pos">+2</div></div>
+      <div class="kc gg"><div class="kv g">21</div><div class="klbl">Call Back</div><div class="kd neg">−3</div></div>
+      <div class="kc"><div class="kv">52</div><div class="klbl">Parked</div><div class="kd neg">+3 (kosha in)</div></div>
+      <div class="kc pp"><div class="kv p">3</div><div class="klbl">Demo Sched</div><div class="kd neu">bluemonkey in</div></div>
     </div>
     <div class="kgrid" style="margin-top:7px">
-      <div class="kc bb"><div class="kv b">3</div><div class="klbl">Demo Cond</div><div class="kd neu">unwood·hydro·kosha</div></div>
-      <div class="kc"><div class="kv b">3</div><div class="klbl">SQL</div><div class="kd pos">Amaraa·orae·Sapience</div></div>
-      <div class="kc pp"><div class="kv p">4</div><div class="klbl">ATP</div><div class="kd pos">₹20k potential</div></div>
-      <div class="kc gold"><div class="kv gl">3</div><div class="klbl">Payment Done</div><div class="kd pos">₹15,000</div></div>
-      <div class="kc gg"><div class="kv g">0.26%</div><div class="klbl">Conv Rate</div><div class="kd neg">PD/total</div></div>
-      <div class="kc"><div class="kv a">5.84%</div><div class="klbl">Rev Stage Rate</div><div class="kd pos">PD+ATP+SQL/total</div></div>
-      <div class="kc"><div class="kv">81</div><div class="klbl">Mar 18+ Leads</div><div class="kd neu">new source batch</div></div>
+      <div class="kc bb"><div class="kv b">2</div><div class="klbl">Demo Cond</div><div class="kd neg">−1 (kosha parked)</div></div>
+      <div class="kc"><div class="kv b">3</div><div class="klbl">SQL</div><div class="kd neu">Amaraa·orae·Sapience</div></div>
+      <div class="kc pp"><div class="kv p">5</div><div class="klbl">ATP</div><div class="kd pos">+1 unwood 🆕</div></div>
+      <div class="kc gold"><div class="kv gl">3</div><div class="klbl">Payment Done</div><div class="kd neu">₹15,000</div></div>
+      <div class="kc gg"><div class="kv g">81</div><div class="klbl">Touched Today</div><div class="kd pos">FY end push</div></div>
+      <div class="kc"><div class="kv a">67</div><div class="klbl">Warm Leads</div><div class="kd neg">FU=46 · CB=21</div></div>
+      <div class="kc"><div class="kv">1,182</div><div class="klbl">Total Deals</div><div class="kd pos">+19 today</div></div>
     </div>
-    <div class="snap">📍 Mar 30 EOD · 1 new SQL today (Amaraa Fragrances, Raksha). unwood revised SOW sent. petvillepetstore ATP 5 days unresponsive. All 3 PD = ₹15,000 collected. 4 ATP pipeline = ₹20,000 target if all close April 1st week. <strong>NI rate: 187 discards = 25.3% of all discards. Critical signal: BD opening with bookkeeping, not Amazon pain.</strong></div>
+    <div style="margin-top:10px">
+      <div class="trend-strip">
+        <div class="td2"><div class="tdl">Feb 23</div><div class="tdc" style="color:var(--red)">0</div><div class="tda">start</div></div>
+        <div class="td2"><div class="tdl">Mar 2</div><div class="tdc" style="color:var(--green)">1</div><div class="tda">Dioste PD</div></div>
+        <div class="td2"><div class="tdl">Mar 11</div><div class="tdc" style="color:var(--green)">2</div><div class="tda">stanedition PD</div></div>
+        <div class="td2"><div class="tdl">Mar 12</div><div class="tdc" style="color:var(--purp)">+2 ATP</div><div class="tda">yuderma+inkup</div></div>
+        <div class="td2"><div class="tdl">Mar 23</div><div class="tdc" style="color:var(--green)">3</div><div class="tda">Root PD</div></div>
+        <div class="td2"><div class="tdl">Mar 24</div><div class="tdc" style="color:var(--purp)">4 ATP</div><div class="tda">Aravi added</div></div>
+        <div class="td2"><div class="tdl">Mar 25</div><div class="tdc" style="color:var(--purp)">5 ATP</div><div class="tda">petville added</div></div>
+        <div class="td2"><div class="tdl">Mar 31 🆕</div><div class="tdc" style="color:var(--gold)">5 ATP</div><div class="tda">unwood in · all-time high</div></div>
+      </div>
+    </div>
+    <div class="snap">📍 FY END EOD · unwood → ATP (5th, Sriharan) · houseofkosha DC → Parked (Shagun: "not required right now") · experiencenoir DS → DC done but weak · bluemonkey → DS (Pranshu) · 19 new leads today, 4 discarded · petvillepetstore: both founders DNP, 6d unresponsive · <strong>April 1 = ₹15k minimum collected + ₹10k+ if yuderma/petvillepetstore close.</strong></div>
   </div>
 </div>
 
 <!-- REVENUE PIPELINE -->
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">R2</span><span class="stitle">Full Revenue Pipeline · 30 Mar EOD</span></div>
+  <div class="sec-hd"><span class="sbadge">R2</span><span class="stitle">Full Revenue Pipeline · 31 Mar EOD · FY End</span></div>
   <div class="sec-body">
+    <div style="background:linear-gradient(135deg,#0B4D2C,#1A7A4A);border-radius:8px;padding:12px 16px;margin-bottom:12px;color:#fff">
+      <div style="font-size:11px;color:#A7F3D0;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Revenue status · FY End · 31 Mar 2026</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+        <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:10px">
+          <div style="font-size:28px;font-weight:800;color:var(--gold)">₹15k</div>
+          <div style="font-size:11px;color:#A7F3D0;margin-top:2px">Collected all FY (3 deals)</div>
+        </div>
+        <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:10px">
+          <div style="font-size:28px;font-weight:800;color:#FFD166">5</div>
+          <div style="font-size:11px;color:#A7F3D0;margin-top:2px">ATPs → ₹25k if all close</div>
+        </div>
+        <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:10px">
+          <div style="font-size:28px;font-weight:800;color:#FFD166">₹10k</div>
+          <div style="font-size:11px;color:#A7F3D0;margin-top:2px">Confirmed Apr 1 (Aravi+inkup)</div>
+        </div>
+        <div style="background:rgba(255,255,255,.1);border-radius:6px;padding:10px">
+          <div style="font-size:28px;font-weight:800;color:#86EFAC">₹40k</div>
+          <div style="font-size:11px;color:#A7F3D0;margin-top:2px">Max potential Apr 1 week</div>
+        </div>
+      </div>
+      <div style="font-size:11px;color:#A7F3D0;margin-top:8px">April 1st week: Aravi + inkup = ₹10k confirmed. unwood + yuderma + petvillepetstore = ₹15k uncertain. Best case: ₹25k in one week = more than all of FY combined. Floor: ₹10k confirmed.</div>
+    </div>
+
     <div class="two" style="margin-bottom:12px">
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">Payment Done — 3 · ₹15,000</div>
         <table>
-          <tr><th>Brand</th><th>BD</th><th class="c">Paid</th><th class="c">₹</th></tr>
+          <tr><th>Brand</th><th>BD</th><th class="c">Date</th><th class="c">₹</th></tr>
           <tr><td>Dioste</td><td>Raksha</td><td class="tc">2 Mar</td><td class="tc">₹5,000</td></tr>
           <tr><td>stanedition.com</td><td>Raksha</td><td class="tc">11 Mar</td><td class="tc">₹5,000</td></tr>
           <tr style="background:var(--gbg)"><td><strong>Root Botanie</strong></td><td>Raksha</td><td class="tc">23 Mar</td><td class="tc" style="color:var(--green);font-weight:700">₹5,000</td></tr>
         </table>
-        <div class="ins ig" style="margin-top:6px">All 3 PD = Raksha. Sriharan and Pranshu yet to close a paying customer despite 3 ATPs and 1 SQL respectively.</div>
+        <div class="ins ir" style="margin-top:6px">All 3 PD = Raksha. Sriharan: 4 ATPs, 0 PD. Pranshu: 0 ATP, 0 PD. The closing gap is the team's #1 structural problem entering Q1 FY27.</div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--purp);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">ATP — 4 · All targeting April 1st week</div>
+        <div style="font-size:11px;font-weight:700;color:var(--purp);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">ATP — 5 · All targeting April 1st week</div>
         <table>
-          <tr><th>Deal</th><th>BD</th><th class="c">ATP Since</th><th class="c">Days</th><th>Status</th></tr>
-          <tr><td><strong>Aravi Organic</strong></td><td>Sriharan</td><td class="tc">24 Mar</td><td class="tc" style="color:var(--amb)">6d</td><td><span class="tag tg">Apr 1 confirmed · FY close</span></td></tr>
-          <tr><td><strong>inkup.co.in</strong></td><td>Sriharan</td><td class="tc">12 Mar</td><td class="tc" style="color:var(--red)">18d</td><td><span class="tag ta">Apr 1 · FY end · last touch Mar 23</span></td></tr>
-          <tr><td><strong>yuderma</strong></td><td>Raksha</td><td class="tc">12 Mar</td><td class="tc" style="color:var(--red)">18d</td><td><span class="tag tr2">SILENT 7d · last touch Mar 23</span></td></tr>
-          <tr style="background:var(--rbg)"><td><strong>petvillepetstore</strong></td><td>Sriharan</td><td class="tc">25 Mar</td><td class="tc" style="color:var(--red)">5d</td><td><span class="tag tr2">NDA dispute · unresponsive 5d</span></td></tr>
+          <tr><th>Deal</th><th>BD</th><th class="c">ATP since</th><th class="c">Days</th><th>Status</th></tr>
+          <tr style="background:var(--gbg)"><td><strong>unwood.in 🆕</strong></td><td>Sriharan</td><td class="tc">31 Mar</td><td class="tc" style="color:var(--green)">0d</td><td><span class="tag tg">Year-end mtg · Callback Apr 1</span></td></tr>
+          <tr><td><strong>Aravi Organic</strong></td><td>Sriharan</td><td class="tc">24 Mar</td><td class="tc" style="color:var(--amb)">7d</td><td><span class="tag tg">Apr 1 confirmed · Invoice ready</span></td></tr>
+          <tr><td><strong>inkup.co.in</strong></td><td>Sriharan</td><td class="tc">12 Mar</td><td class="tc" style="color:var(--red)">19d</td><td><span class="tag ta">Apr 1 confirmed · FY transition</span></td></tr>
+          <tr style="background:var(--rbg)"><td><strong>yuderma</strong></td><td>Raksha</td><td class="tc">12 Mar</td><td class="tc" style="color:var(--red)">19d</td><td><span class="tag tr2">8d SILENT · critical · Apr 1 or dead</span></td></tr>
+          <tr style="background:var(--rbg)"><td><strong>petvillepetstore</strong></td><td>Sriharan</td><td class="tc">25 Mar</td><td class="tc" style="color:var(--red)">6d</td><td><span class="tag tr2">Both founders DNP today · NDA unresolved</span></td></tr>
         </table>
-        <div class="ins ia" style="margin-top:6px">April 1 target: Aravi + inkup confirmed = ₹10k. yuderma + petvillepetstore = uncertain. If all 4 close: ₹35k total collected — 2x+ all-time. Raksha must call yuderma morning Apr 1. Sriharan: offer NDA to petvillepetstore.</div>
+        <div class="ins ia" style="margin-top:6px">Aravi + inkup = ₹10k locked for Apr 1. unwood = high confidence (F2F trust, SOW reviewed). yuderma + petvillepetstore = uncertain. Raksha must open Apr 1 with yuderma. Sriharan: last NDA attempt for petvillepetstore tomorrow AM before parking.</div>
       </div>
     </div>
 
@@ -218,267 +243,258 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">SQL — 3</div>
         <div class="dc2 hot">
-          <div class="dn">Amaraa Fragrances 🆕 · Raksha</div>
-          <div class="dm">SQL today 30 Mar · Founder managing solo via Excel · Fragrance D2C</div>
-          <div class="db">Amita handling everything alone — no dedicated finance. Pain confirmed. Proposal sent today. Demo ASAP this week.</div>
-          <div class="da" style="color:var(--green)">→ Demo call Tue/Wed. Hot.</div>
+          <div class="dn">Amaraa Fragrances · Raksha</div>
+          <div class="dm">SQL 30 Mar · Solo founder · Excel · Fragrance D2C</div>
+          <div class="db">DNP today at 12 PM — FY end day. Call tomorrow Apr 1. Amita managing solo via Excel, pain confirmed. Hot deal.</div>
+          <div class="da" style="color:var(--green)">→ Demo Apr 1-2. First call AM.</div>
         </div>
         <div class="dc2 info">
           <div class="dn">orae.in · Pranshu</div>
-          <div class="dm">SQL 23 Mar · 7 days · Demo still pending</div>
-          <div class="db">P&L + CM1/CM2 focus confirmed. Accounts team to join. Shubham says he is busy at home. WA sent today. Demo must happen this week.</div>
-          <div class="da" style="color:var(--amb)">→ Lock demo slot by Apr 1 PM.</div>
+          <div class="dm">SQL 23 Mar · 8d · P&L + CM1/CM2 · Accounts team</div>
+          <div class="db">Last touch Mar 30 WA. Shubham busy at home. FY end. WA sent. Demo must lock this week.</div>
+          <div class="da" style="color:var(--amb)">→ Call Apr 1. Lock demo with accounts team.</div>
         </div>
         <div class="dc2 warn">
           <div class="dn">Sapience Agribusiness · Raksha</div>
-          <div class="dm">SQL 27 Mar · B2B Consulting · thin business</div>
-          <div class="db">Somu Kumar: "business is lean right now." Interested if automated. Post-March 31 demo. Qualify revenue first — B2B consulting, not D2C.</div>
-          <div class="da" style="color:var(--muted)">→ Demo post Apr 1. Qualify revenue.</div>
+          <div class="dm">SQL 27 Mar · B2B Consulting · Post-Mar 31 demo</div>
+          <div class="db">Proposal sent. Post month-end demo committed. Qualify revenue before full demo investment.</div>
+          <div class="da" style="color:var(--muted)">→ Call Apr 1 PM. Qualify: D2C? Revenue?</div>
         </div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">Demo Conducted — 3</div>
+        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">Demo Conducted — 2</div>
         <div class="dc2 hot">
-          <div class="dn">unwood.in · Sriharan</div>
-          <div class="dm">DC 25 Mar · F2F meeting done · Revised SOW sent today</div>
-          <div class="db">Vishal reviewing revised SOW over weekend. Strong trust intent (office visit). FY year-end causing delay. High confidence deal.</div>
-          <div class="da" style="color:var(--green)">→ FU call Tue Apr 1. "Any questions on revised SOW?"</div>
+          <div class="dn">humanhydro.com · Raksha</div>
+          <div class="dm">DC 23 Mar · 8d · 7 GST states · 50 SKUs · ₹33k/month potential</div>
+          <div class="db">Highest EV deal in pipeline. Co-founder still confused on Tally integration. Post-travel review pending. Call Apr 1.</div>
+          <div class="da" style="color:var(--green)">→ SQL call Apr 1. "Reviewed the Tally doc with co-founder?"</div>
         </div>
         <div class="dc2 warn">
-          <div class="dn">humanhydro.com · Raksha</div>
-          <div class="dm">DC 23 Mar · Post-travel · Tally integration confusion</div>
-          <div class="db">Co-founder confused about Tally integration. Documentation sent. Zulfikar said to connect post-Tuesday. SQL call Apr 1 PM.</div>
-          <div class="da" style="color:var(--amb)">→ Call Wed Apr 1 PM. "Have you reviewed the Tally doc?"</div>
-        </div>
-        <div class="dc2 info">
-          <div class="dn">houseofkosha.in · Sriharan</div>
-          <div class="dm">DC 25 Mar · Proposal sent · Shagun + Kopal reviewing</div>
-          <div class="db">Proposal at ₹7k/month sent. Premium saree brand, external CA, manual Excel. Co-founder reviewing with accountant. FU this week.</div>
-          <div class="da" style="color:var(--blue)">→ Call Apr 1. "Any questions on the proposal?"</div>
+          <div class="dn">experiencenoir.in · Pranshu</div>
+          <div class="dm">DC done 31 Mar · WEAK signal · "nice to have not must-have"</div>
+          <div class="db">Demo completed today. But: existing accountant + family CA setup working, pricing pushback, prefers human-led over tool. Not an urgent pain. High park risk.</div>
+          <div class="da" style="color:var(--red)">→ 48h window to convert or park. One more follow-up only.</div>
         </div>
       </div>
       <div>
         <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.4px">Demo Scheduled — 3</div>
-        <div class="dc2 crit">
-          <div class="dn">NextLeap Aeronautics 🚨 · Sriharan</div>
-          <div class="dm">DS 24 Mar · STRONG ICP MISS</div>
-          <div class="db">4 in-house accountants + 2 internal auditors + 1 external CA. Finance function fully staffed. They want MIS reporting only — not reconciliation. DO NOT run demo.</div>
-          <div class="da" style="color:var(--red)">→ PARK IMMEDIATELY. Not AIA ICP.</div>
+        <div class="dc2 hot">
+          <div class="dn">bluemonkey.in 🆕 · Pranshu</div>
+          <div class="dm">DS today · D2C+B2B · Myntra/Flipkart/RGO · Tally · Unicommerce</div>
+          <div class="db">Multi-channel D2C+B2B. Data from Unicommerce → manual push to Tally. "Heavy manual effort." "No single real-time view." Strong pain. BUT — has in-house accounting team. Qualify team depth before demo.</div>
+          <div class="da" style="color:var(--amb)">→ Qualify: team size + how many dedicated to reconciliation?</div>
         </div>
         <div class="dc2 warn">
           <div class="dn">mithilafoods.com · Sriharan</div>
-          <div class="dm">DS 10 Mar · Day 20 · Demo still not happened</div>
-          <div class="db">Travel emergency earlier. Multiple reschedules. Call today — no update visible. Last chance before parking.</div>
-          <div class="da" style="color:var(--amb)">→ Call Apr 1. Park if no response.</div>
+          <div class="dm">DS 10 Mar · Day 21 · Travel again today</div>
+          <div class="db">DNP again today. Travelling this week again. Last attempt Apr 1. Park if no response.</div>
+          <div class="da" style="color:var(--red)">→ Call Apr 1. Last attempt. Park if DNP.</div>
         </div>
-        <div class="dc2 info">
-          <div class="dn">experiencenoir.in · Pranshu</div>
-          <div class="dm">DS 26 Feb · Pranshu flagged ICP doubts</div>
-          <div class="db">Pranshu himself flagged "might not have need." Qualify: do they sell on Amazon/Shopify? If no marketplace pain, park.</div>
-          <div class="da" style="color:var(--muted)">→ Qualify before demo. Cancel if no Amazon/Shopify.</div>
+        <div class="dc2 crit">
+          <div class="dn">NextLeap Aeronautics · Sriharan</div>
+          <div class="dm">DS · ICP MISS · 4 accountants + 2 auditors + 1 CA in-house</div>
+          <div class="db">Finance function fully staffed. Should not be in DS. Cancel demo. Park.</div>
+          <div class="da" style="color:var(--red)">→ Park TODAY. Do not run demo.</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- INSIGHTS -->
+<!-- KEY INSIGHTS -->
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">R3</span><span class="stitle">Key Insights · Patterns · Apr 1 Priorities</span></div>
+  <div class="sec-hd"><span class="sbadge">R3</span><span class="stitle">Key Insights · FY End Signals · Apr 1 Priorities</span></div>
   <div class="sec-body">
     <div class="two">
       <div>
         <div class="ac good">
-          <div class="act" style="color:var(--green)">April 1 = potential revenue doubling week</div>
-          <div class="acb">Aravi + inkup both confirmed for April 1st week (₹10k). If yuderma + petvillepetstore also close, that's ₹20k in one week — from ₹15k all-time to ₹35k. This is the highest-leverage 5-day window since launch.</div>
-          <div class="aca" style="color:var(--green)">→ Raksha: yuderma call first thing Apr 1 AM. Sriharan: NDA offer to petvillepetstore NOW.</div>
+          <div class="act" style="color:var(--green)">5 ATPs is an all-time high — April 1 week is the biggest revenue moment yet</div>
+          <div class="acb">unwood joining today brings ATPs to 5 for the first time. Aravi + inkup = ₹10k confirmed. unwood = high confidence (F2F + SOW reviewed). Best case April 1-7: ₹25k collected = 2.7x all of FY combined. Sriharan has 4 of the 5 ATPs — his closing execution this week defines the quarter.</div>
+          <div class="aca" style="color:var(--green)">→ Invoice ready for Aravi + inkup April 1 morning. unwood callback secured.</div>
         </div>
-        <div class="ac good">
-          <div class="act" style="color:var(--green)">Raksha = only BD with paid customers (3 PD)</div>
-          <div class="acb">All 3 Payment Done deals are Raksha's. Sriharan has 3 ATPs but 0 PD. Pranshu has 0 ATP and 0 PD. Raksha's closing pattern (Dioste, stanedition, Root Botanie) is the playbook others need to replicate.</div>
-          <div class="aca" style="color:var(--green)">→ Peer session: Raksha walks through what she does at the close conversation.</div>
+        <div class="ac gld">
+          <div class="act" style="color:var(--gold)">FY end = highest-intent window. Re-engage all stalled warm leads NOW.</div>
+          <div class="acb">fyn-x Ankita committed to re-contact after March 31. Aristobrat: "busy because of year end, connect after a week." Multiple founders deferred to post-April 1. The FY new year is the cleanest buying trigger in B2B India. Every FU/CB lead should receive a "start April clean" WA tonight.</div>
+          <div class="aca" style="color:var(--gold)">→ FY-end WA blast: all 67 FU+CB leads by 10 PM tonight. "New FY starts April 1 — clean books from day 1?"</div>
         </div>
         <div class="ac warn">
-          <div class="act" style="color:var(--amb)">NI rate at 25.3% of discards — Amazon-first pitch not landing consistently</div>
-          <div class="acb">187 "Not Interested" discards. Pranshu has the highest NI count (64) — nearly 33% of all his discards are NI. Pattern: BD still opening with "bookkeeping" or "financial visibility" rather than the Amazon reconciliation hook. The Amazon-first drill needs to be enforced at standup.</div>
-          <div class="aca" style="color:var(--amb)">→ Standup drill: first 10 seconds of call. Amazon hook only.</div>
+          <div class="act" style="color:var(--amb)">houseofkosha DC → Parked: lesson for the team</div>
+          <div class="acb">Shagun (who handles finance) reviewed the proposal and said "not required at the moment." The in-house accountant (who wasn't finance-savvy) was never the real decision-maker. The lesson: always get the finance decision-maker on the demo, not an operations contact. The co-founder who controls the budget said no.</div>
+          <div class="aca" style="color:var(--amb)">→ Re-engage July if Shagun posts for Tally/Accountant job or adds new channel.</div>
         </div>
         <div class="ac crit">
-          <div class="act" style="color:var(--red)">Pranshu: 0 revenue outcomes from 264 deals</div>
-          <div class="acb">264 deals worked, 1 SQL (orae), 0 ATP, 0 PD. 196 discards (74% disc rate). 64 NI = highest NI rate on the team. The SQL (orae) has been stuck for 7 days. Pranshu's conversion gap is structural — needs different ICP targeting or pitch coaching, not just volume increase.</div>
-          <div class="aca" style="color:var(--red)">→ Pranshu + Pei: 1:1 call. Review first 10 seconds of last 5 recorded calls.</div>
+          <div class="act" style="color:var(--red)">petvillepetstore ATP: both founders DNP today — 6 days total silence</div>
+          <div class="acb">Divyanshu + Karan both unresponsive since Mar 25. The T&C sent instead of NDA created friction that broke trust. The deal is still technically ATP but at very high risk. Tomorrow is the last window: WA to Divyanshu specifically offering NDA, not T&C. If no response by Apr 2 → park ATP.</div>
+          <div class="aca" style="color:var(--red)">→ WA to Divyanshu Apr 1 AM: "Sending NDA now — confirming this works for you?" Short, one question only.</div>
         </div>
       </div>
       <div>
         <div class="ac flag">
-          <div class="act" style="color:var(--purp)">Mar 18+ batch: 73.5% disc/DNP rate is above average</div>
-          <div class="acb">81 new source leads from Mar 18+. 30 discarded + 27 DNP = 57 of 81 (70.4%) exited without engagement. Only 2 SQL, 7 CB, 7 FU. The batch had mixed ICP quality — aerospace, IT, SAP firms included. Better pre-filtering before dialling will reduce waste significantly.</div>
-          <div class="aca" style="color:var(--purp)">→ Apply ICP filter before dialling all future batches. Tag Deal Source field.</div>
+          <div class="act" style="color:var(--purp)">Two new buying signals emerged today: cheerbox + aekart</div>
+          <div class="acb">cheerbox.in: "manually tracking all of this and wants to solve it." aekart.in: "managing everything through Excel and it is a lot of spreadsheets." These are verbatim pain confessions — both should be in demo pipeline this week. Raksha owns both.</div>
+          <div class="aca" style="color:var(--purp)">→ Raksha: demo ask to both tomorrow Apr 1. "15 minutes to show you what this looks like?"</div>
         </div>
         <div class="ac info">
-          <div class="act" style="color:var(--blue)">Raksha discard compliance still lowest on team: 63.6%</div>
-          <div class="acb">126/198 discards have a reason filled. 72 gaps. Despite having the most PD, the CRM hygiene is weakest — this creates pipeline leak where leads are discarded without a reason and can't be re-engaged intelligently later.</div>
-          <div class="aca" style="color:var(--blue)">→ Raksha: fill 10 discard reasons per day starting Apr 1. Pei to review EOD.</div>
+          <div class="act" style="color:var(--blue)">fyn-x re-engage window opens April 1 — Pranshu's best lead</div>
+          <div class="acb">Ankita committed: "after March 31 I'll contact Kunal" and "will decide if we want to continue." Their accounting is "a bit of a mess," they're outsourcing to auditors, and Kunal wants the dashboard. This is Pranshu's highest probability deal for April. First call of the day.</div>
+          <div class="aca" style="color:var(--blue)">→ Pranshu: fyn-x first call Apr 1, 9 AM. "Ankita, March 31 is done — ready to connect with Kunal?"</div>
         </div>
-        <div class="ac gld">
-          <div class="act" style="color:var(--gold)">FY end timing = highest conversion window in calendar</div>
-          <div class="acb">4 of the 7 ATP/PD deals this cycle have explicitly mentioned year-end or April 1 as their onboarding trigger. The next 5 days (Mar 30 – Apr 3) are historically the highest-intent window for finance decisions. Every warm lead should be contacted with FY-end WA by end of tomorrow.</div>
-          <div class="aca" style="color:var(--gold)">→ Blast FY-end WA to all 68 FU+CB leads by EOD tomorrow. Template ready.</div>
+        <div class="ac warn">
+          <div class="act" style="color:var(--amb)">NI count crossed 197 — 26.1% of all discards. Pranshu highest at 69</div>
+          <div class="acb">197 Not Interested discards out of 755 total (26.1%). Pranshu has 69 NI = 33.7% of his discards. The FY end batch (today's 19 leads) included B2B automation, drones, healthcare B2B, fintech — wrong categories. ICP pre-filter still not being applied before dialling.</div>
+          <div class="aca" style="color:var(--amb)">→ Standup Apr 1: ICP check before any dial. No B2B-only, no automation, no healthcare B2B.</div>
         </div>
 
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--navy);margin-top:12px;margin-bottom:8px">Apr 1 Priority List</div>
         <ul class="pl">
-          <li class="pi"><div class="pn">1</div><div class="pt"><strong>yuderma — Raksha, first call 9 AM.</strong> 18d ATP, 7d silent. Last recovery window. <span class="pu" style="background:var(--rbg);color:var(--red)">CRITICAL</span></div></li>
-          <li class="pi"><div class="pn">2</div><div class="pt"><strong>petvillepetstore NDA — Sriharan.</strong> "Would you prefer I send an NDA instead?" <span class="pu" style="background:var(--rbg);color:var(--red)">ATP</span></div></li>
-          <li class="pi"><div class="pn">3</div><div class="pt"><strong>Aravi + inkup invoice reminders.</strong> Payment due Apr 1. Invoice ready? <span class="pu" style="background:var(--gbg);color:var(--green)">INVOICE</span></div></li>
-          <li class="pi"><div class="pn">4</div><div class="pt"><strong>humanhydro SQL — Raksha, PM.</strong> "Have you reviewed the Tally doc?" <span class="pu" style="background:var(--abg);color:var(--amb)">SQL</span></div></li>
-          <li class="pi"><div class="pn">5</div><div class="pt"><strong>unwood SOW FU — Sriharan.</strong> "Any questions on revised SOW?" <span class="pu" style="background:var(--gbg);color:var(--green)">DC→SQL</span></div></li>
-          <li class="pi"><div class="pn">6</div><div class="pt"><strong>Amaraa Fragrances demo — Raksha.</strong> Book Tue or Wed slot today. <span class="pu" style="background:var(--gbg);color:var(--green)">HOT SQL</span></div></li>
-          <li class="pi"><div class="pn">7</div><div class="pt"><strong>NextLeap DS → Park — Sriharan standup.</strong> 4 accountants in-house. Cancel demo. <span class="pu" style="background:var(--rbg);color:var(--red)">PARK</span></div></li>
-          <li class="pi"><div class="pn">8</div><div class="pt"><strong>FY-end WA blast — all 68 FU+CB leads.</strong> "March 31 books not where they should be?" <span class="pu" style="background:var(--pbg);color:var(--purp)">BLAST</span></div></li>
-          <li class="pi"><div class="pn">9</div><div class="pt"><strong>orae demo — Pranshu.</strong> Lock time with accounts team this week. <span class="pu" style="background:var(--abg);color:var(--amb)">SQL</span></div></li>
-          <li class="pi"><div class="pn">10</div><div class="pt"><strong>Raksha: 10 discard reasons filled.</strong> Check EOD. <span class="pu" style="background:var(--bbg);color:var(--blue)">COMPLIANCE</span></div></li>
+          <li class="pi"><div class="pn">1</div><div class="pt"><strong>Aravi + inkup invoices — Sriharan, 8 AM.</strong> "Happy April! Invoice attached." <span class="pu" style="background:var(--gbg);color:var(--green)">INVOICE</span></div></li>
+          <li class="pi"><div class="pn">2</div><div class="pt"><strong>yuderma — Raksha, 9 AM.</strong> 19d ATP, 8d silent. Last recovery call. <span class="pu" style="background:var(--rbg);color:var(--red)">CRITICAL</span></div></li>
+          <li class="pi"><div class="pn">3</div><div class="pt"><strong>fyn-x — Pranshu, 9 AM.</strong> FY ended. "Ready to connect with Kunal?" <span class="pu" style="background:var(--gbg);color:var(--green)">HIGHEST PROB</span></div></li>
+          <li class="pi"><div class="pn">4</div><div class="pt"><strong>petvillepetstore NDA — Sriharan.</strong> WA: "Sending NDA now — confirm this works?" <span class="pu" style="background:var(--rbg);color:var(--red)">LAST ATTEMPT</span></div></li>
+          <li class="pi"><div class="pn">5</div><div class="pt"><strong>unwood callback — Sriharan.</strong> FY meeting done. "Ready to finalise?" <span class="pu" style="background:var(--gbg);color:var(--green)">ATP</span></div></li>
+          <li class="pi"><div class="pn">6</div><div class="pt"><strong>Amaraa Fragrances demo — Raksha.</strong> DNP FY end. First call Apr 1. <span class="pu" style="background:var(--gbg);color:var(--green)">HOT SQL</span></div></li>
+          <li class="pi"><div class="pn">7</div><div class="pt"><strong>cheerbox + aekart demo ask — Raksha.</strong> Both confirmed manual pain today. <span class="pu" style="background:var(--pbg);color:var(--purp)">NEW SIGNAL</span></div></li>
+          <li class="pi"><div class="pn">8</div><div class="pt"><strong>humanhydro SQL — Raksha.</strong> "Reviewed Tally doc with co-founder?" <span class="pu" style="background:var(--abg);color:var(--amb)">SQL</span></div></li>
+          <li class="pi"><div class="pn">9</div><div class="pt"><strong>NextLeap DS → Park — Sriharan.</strong> Cancel demo. Non-negotiable. <span class="pu" style="background:var(--rbg);color:var(--red)">PARK</span></div></li>
+          <li class="pi"><div class="pn">10</div><div class="pt"><strong>FY-end WA blast — all 67 FU+CB leads.</strong> "New FY. Start April clean?" <span class="pu" style="background:var(--bbg);color:var(--blue)">BLAST</span></div></li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-</div><!-- end main -->
+</div>
 <div class="footer">
-  <div>AIA Dashboard · 30 Mar 2026 EOD · 1,163 deals · 10 rev-stage · ₹15k collected · 4 ATP → target ₹35k by Apr 7</div>
-  <div style="display:flex;gap:5px;flex-wrap:wrap">
-    <span class="fpill">Amaraa SQL 🆕</span><span class="fpill">unwood SOW revised</span><span class="fpill">yuderma: CRITICAL</span><span class="fpill">Apr 1 = ₹10k minimum</span>
+  <div>AIA Dashboard · 31 Mar 2026 FY END EOD · 1,182 deals · 5 ATPs · ₹15k collected · Apr 1 target: ₹25k+</div>
+  <div style="display:flex;gap:4px;flex-wrap:wrap">
+    <span class="fpill">unwood ATP 🎯</span><span class="fpill">5 ATPs all-time high</span><span class="fpill">cheerbox+aekart: new signals</span><span class="fpill">yuderma: Apr 1 or dead</span><span class="fpill">fyn-x: Apr 1 re-engage</span>
   </div>
 </div>
 </div>
 
-<!-- ═══ PAGE 2: BD PERFORMANCE ═══ -->
+<!-- ══════ PAGE 2: BD PERFORMANCE ══════ -->
 <div class="page" id="p2">
 <div class="hd">
-  <div class="hd-title">AIA <span>BD Performance</span> <span style="font-size:13px;font-weight:500;opacity:.5">· All-Time + Mar 18+ Breakdown</span></div>
-  <div class="hd-sub">Based on 1,163 deals · 4 active BDs · Cumulative since Feb 23</div>
+  <div class="hd-title">AIA <span>BD Performance</span> <span style="font-size:13px;font-weight:500;opacity:.5">· FY End · All-Time + Today (31 Mar)</span></div>
+  <div class="hd-sub">1,182 total deals · 81 touched today · FY ends today</div>
 </div>
 <div class="main">
 
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">B1</span><span class="stitle">BD Scorecard — All-Time Cumulative</span></div>
+  <div class="sec-hd"><span class="sbadge">B1</span><span class="stitle">BD Scorecard — All-Time Cumulative (FY End)</span></div>
   <div class="sec-body">
     <table>
       <tr>
-        <th>BD</th><th class="c">Total Deals</th><th class="c">Discards</th><th class="c">Disc %</th><th class="c">NI</th><th class="c">Not ICP</th><th class="c">Warm</th><th class="c">ATP</th><th class="c">PD</th><th class="c">Rev Stage</th><th class="c">Disc Fill%</th>
+        <th>BD</th><th class="c">Total</th><th class="c">Disc</th><th class="c">Disc%</th><th class="c">NI</th><th class="c">Not ICP</th><th class="c">Unfilled</th><th class="c">Warm</th><th class="c">SQL</th><th class="c">DC</th><th class="c">DS</th><th class="c">ATP</th><th class="c">PD</th><th class="c">Fill%</th>
       </tr>
       <tr style="background:#F0FFF6">
-        <td><strong>Raksha Gangadhar 🏆</strong></td><td class="tc">303</td>
-        <td class="tc" style="color:var(--amb)">198</td><td class="tc" style="color:var(--amb)">65.3%</td>
-        <td class="tc">53</td><td class="tc">28</td>
-        <td class="tc" style="color:var(--blue);font-weight:700">27</td>
+        <td><strong>Raksha Gangadhar 🏆</strong></td><td class="tc">310</td>
+        <td class="tc">203</td><td class="tc" style="color:var(--amb)">65.5%</td>
+        <td class="tc">57</td><td class="tc">29</td>
+        <td class="tc" style="color:var(--red);font-weight:700">73</td>
+        <td class="tc" style="color:var(--blue);font-weight:700">32</td>
+        <td class="tc" style="color:var(--green);font-weight:700">2</td>
+        <td class="tc">1</td><td class="tc">0</td>
         <td class="tc" style="color:var(--purp)">1</td>
         <td class="tc" style="color:var(--green);font-weight:800">3 🏆</td>
-        <td class="tc" style="color:var(--green)">7</td>
-        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:63.6%;background:var(--red)"></div></div><span class="pv" style="color:var(--red)">63.6%</span></div></td>
+        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:64.5%;background:var(--red)"></div></div><span class="pv" style="color:var(--red)">64.5%</span></div></td>
       </tr>
       <tr>
-        <td><strong>Sriharan VS ⭐</strong></td><td class="tc">293</td>
-        <td class="tc" style="color:var(--amb)">207</td><td class="tc" style="color:var(--amb)">70.6%</td>
-        <td class="tc">44</td><td class="tc">34</td>
-        <td class="tc" style="color:var(--blue)">21</td>
-        <td class="tc" style="color:var(--purp);font-weight:700">3</td>
+        <td><strong>Sriharan VS ⭐⭐⭐</strong></td><td class="tc">299</td>
+        <td class="tc">210</td><td class="tc" style="color:var(--amb)">70.2%</td>
+        <td class="tc">45</td><td class="tc">34</td>
+        <td class="tc" style="color:var(--amb)">32</td>
+        <td class="tc">16</td>
+        <td class="tc">0</td><td class="tc">0</td><td class="tc">2</td>
+        <td class="tc" style="color:var(--purp);font-weight:700">4</td>
         <td class="tc">0</td>
-        <td class="tc" style="color:var(--blue)">5</td>
-        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:85%;background:var(--green)"></div></div><span class="pv" style="color:var(--green)">85.0%</span></div></td>
+        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:85.2%;background:var(--green)"></div></div><span class="pv" style="color:var(--green)">85.2%</span></div></td>
       </tr>
       <tr>
-        <td><strong>Pranshu Jain ⚠️</strong></td><td class="tc">264</td>
-        <td class="tc" style="color:var(--red)">196</td><td class="tc" style="color:var(--red)">74.2%</td>
-        <td class="tc" style="color:var(--red);font-weight:700">64</td><td class="tc">24</td>
-        <td class="tc">20</td>
-        <td class="tc">0</td><td class="tc">0</td>
-        <td class="tc" style="color:var(--red)">1</td>
-        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:78%;background:var(--amb)"></div></div><span class="pv" style="color:var(--amb)">78.1%</span></div></td>
+        <td><strong>Pranshu Jain ⚠️</strong></td><td class="tc">271</td>
+        <td class="tc" style="color:var(--red)">205</td><td class="tc" style="color:var(--red)">75.6%</td>
+        <td class="tc" style="color:var(--red);font-weight:700">69</td><td class="tc">24</td>
+        <td class="tc" style="color:var(--amb)">44</td>
+        <td class="tc">19</td>
+        <td class="tc" style="color:var(--blue)">1</td>
+        <td class="tc" style="color:var(--blue)">1</td><td class="tc">1</td>
+        <td class="tc">0</td><td class="tc" style="color:var(--red)">0</td>
+        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:79%;background:var(--amb)"></div></div><span class="pv" style="color:var(--amb)">79.0%</span></div></td>
       </tr>
-      <tr style="opacity:.45">
-        <td><em>Hiba Navarin (inactive)</em></td><td class="tc">175</td>
-        <td class="tc">137</td><td class="tc">78.3%</td>
-        <td class="tc">26</td><td class="tc">13</td>
-        <td class="tc">0</td><td class="tc">0</td><td class="tc">0</td><td class="tc">0</td>
-        <td class="tc"><div class="pb2"><div class="pb"><div class="pb-f" style="width:77%;background:var(--amb)"></div></div><span class="pv" style="color:var(--amb)">77.4%</span></div></td>
+      <tr style="opacity:.4">
+        <td><em>Hiba Navarin</em></td><td class="tc">174</td>
+        <td class="tc">137</td><td class="tc">78.7%</td>
+        <td class="tc">26</td><td class="tc">13</td><td class="tc">31</td>
+        <td class="tc">0</td><td class="tc">0</td><td class="tc">0</td><td class="tc">0</td><td class="tc">0</td><td class="tc">0</td>
+        <td class="tc">77.4%</td>
       </tr>
       <tr style="background:#1B2A4A">
         <td style="color:#fff;font-weight:700">ACTIVE TEAM (3)</td>
-        <td class="tc" style="color:var(--gold);font-weight:700">860</td>
-        <td class="tc" style="color:var(--gold)">601</td><td class="tc" style="color:var(--gold)">69.9%</td>
-        <td class="tc" style="color:var(--gold)">161</td><td class="tc" style="color:var(--gold)">86</td>
-        <td class="tc" style="color:var(--gold)">68</td>
-        <td class="tc" style="color:var(--gold);font-weight:700">4</td>
+        <td class="tc" style="color:var(--gold);font-weight:700">880</td>
+        <td class="tc" style="color:var(--gold)">618</td><td class="tc" style="color:var(--gold)">70.2%</td>
+        <td class="tc" style="color:#FF8A80;font-weight:700">171</td>
+        <td class="tc" style="color:var(--gold)">87</td>
+        <td class="tc" style="color:var(--red);font-weight:700">149</td>
+        <td class="tc" style="color:var(--gold)">67</td>
+        <td class="tc" style="color:var(--gold)">3</td>
+        <td class="tc" style="color:var(--gold)">2</td>
+        <td class="tc" style="color:var(--gold)">3</td>
+        <td class="tc" style="color:var(--gold);font-weight:700">5</td>
         <td class="tc" style="color:var(--gold);font-weight:700">3</td>
-        <td class="tc" style="color:var(--gold)">13</td>
-        <td class="tc" style="color:var(--gold)">75.6%</td>
+        <td class="tc" style="color:var(--gold)">76.4%</td>
       </tr>
     </table>
-    <div class="ins ir" style="margin-top:8px"><strong>Critical pattern:</strong> Pranshu 264 deals, 0 ATP, 0 PD. 64 NI = 32.7% of his discards. This is the worst NI rate on the active team — almost 1 in 3 discards is "Not Interested." Root cause: wrong opener or wrong ICP targeting. Not a volume problem.</div>
+    <div class="ins ir" style="margin-top:8px"><strong>FY end summary:</strong> Pranshu: 271 deals worked, 0 ATP, 0 PD, 69 NI. Highest NI rate (33.7% of discards). 1 SQL (orae, 8d stalled) + 1 DC (experiencenoir, weak). No revenue outcome from 37 weeks on the team. Q1 FY27 intervention required. Raksha has most SQL/DC/PD but worst discard fill rate (64.5%). Sriharan has 4 ATPs but 0 PD — the conversion gap is the #1 team problem entering April.</div>
   </div>
 </div>
 
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">B2</span><span class="stitle">Discard Reason Breakdown by BD — All Time</span></div>
+  <div class="sec-hd"><span class="sbadge">B2</span><span class="stitle">Today's Activity — 31 Mar (FY End Day) · 81 Leads Touched</span></div>
   <div class="sec-body">
     <table>
-      <tr><th>BD</th><th class="c">Not Interested</th><th class="c">Not our ICP</th><th class="c">Missing Contact</th><th class="c">Unresponsive</th><th class="c">Wrong Contact</th><th class="c">Others</th><th class="c">UNFILLED</th><th class="c">Total Disc</th></tr>
-      <tr><td><strong>Raksha</strong></td><td class="tc">53</td><td class="tc">28</td><td class="tc">23</td><td class="tc">17</td><td class="tc">2</td><td class="tc">3</td><td class="tc" style="color:var(--red);font-weight:700">72</td><td class="tc">198</td></tr>
-      <tr><td><strong>Sriharan</strong></td><td class="tc">44</td><td class="tc" style="color:var(--red)">34</td><td class="tc" style="color:var(--red)">71</td><td class="tc">17</td><td class="tc">7</td><td class="tc">3</td><td class="tc" style="color:var(--amb)">31</td><td class="tc">207</td></tr>
-      <tr><td><strong>Pranshu</strong></td><td class="tc" style="color:var(--red);font-weight:700">64</td><td class="tc">24</td><td class="tc">25</td><td class="tc">30</td><td class="tc">5</td><td class="tc">5</td><td class="tc" style="color:var(--amb)">43</td><td class="tc">196</td></tr>
-      <tr><td><em>Hiba</em></td><td class="tc">26</td><td class="tc">13</td><td class="tc">51</td><td class="tc">5</td><td class="tc">8</td><td class="tc">3</td><td class="tc">31</td><td class="tc">137</td></tr>
+      <tr><th>BD</th><th class="c">Leads Touched</th><th class="c">New Leads</th><th class="c">Discarded</th><th class="c">DNP</th><th class="c">FU</th><th class="c">CB</th><th class="c">Notable</th></tr>
+      <tr><td><strong>Raksha</strong></td><td class="tc">31</td><td class="tc">7</td><td class="tc">4</td><td class="tc">13</td><td class="tc" style="color:var(--green);font-weight:700">5</td><td class="tc">1</td><td><span class="tag tg">SQL: Amaraa</span> <span class="tag tp">FU: cheerbox+aekart signals</span></td></tr>
+      <tr><td><strong>Sriharan</strong></td><td class="tc">30</td><td class="tc">7</td><td class="tc">0</td><td class="tc">12</td><td class="tc">4</td><td class="tc">2</td><td><span class="tag tg">unwood → ATP 🎯</span> <span class="tag ta">petville both DNP</span></td></tr>
+      <tr><td><strong>Pranshu</strong></td><td class="tc">20</td><td class="tc">5</td><td class="tc">4</td><td class="tc">9</td><td class="tc">2</td><td class="tc">0</td><td><span class="tag tb">experiencenoir DC</span> <span class="tag ta">bluemonkey DS</span></td></tr>
       <tr style="background:#1B2A4A">
         <td style="color:#fff;font-weight:700">TOTAL</td>
-        <td class="tc" style="color:#FF8A80;font-weight:700">187</td><td class="tc" style="color:#FF8A80">99</td>
-        <td class="tc" style="color:var(--gold)">170</td><td class="tc" style="color:var(--gold)">69</td>
-        <td class="tc" style="color:#fff">22</td><td class="tc" style="color:#fff">14</td>
-        <td class="tc" style="color:var(--red);font-weight:700">177</td><td class="tc" style="color:#fff">738</td>
+        <td class="tc" style="color:var(--gold);font-weight:700">81</td>
+        <td class="tc" style="color:var(--gold)">19</td>
+        <td class="tc" style="color:var(--gold)">8</td>
+        <td class="tc" style="color:var(--gold)">34</td>
+        <td class="tc" style="color:var(--gold)">11</td>
+        <td class="tc" style="color:var(--gold)">3</td>
+        <td style="color:#fff">1 ATP · 1 DC · 1 DS</td>
       </tr>
     </table>
-    <div class="ins ia" style="margin-top:8px"><strong>Key insight:</strong> 187 NI discards (25.3% of all) + 99 Not ICP (13.4%) = 286 discards (38.8%) that could have been prevented with better ICP pre-filtering and Amazon-first opener. <strong>177 discards (24%) have no reason filled</strong> — pipeline intelligence is being destroyed every day this continues.</div>
+    <div class="ins ig" style="margin-top:8px">FY end day performance: Sriharan landed the ATP (unwood). Raksha generated the best new leads (cheerbox + aekart buying signals). Pranshu got 2 demos moving but both are uncertain quality. 34 DNPs on FY end day is expected — founders in year-end close mode.</div>
   </div>
 </div>
 
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">B3</span><span class="stitle">Mar 18+ Batch Performance by BD</span></div>
-  <div class="sec-body">
-    <table>
-      <tr><th>BD</th><th class="c">Total Mar 18+</th><th class="c">Discard</th><th class="c">DNP</th><th class="c">FU</th><th class="c">CB</th><th class="c">SQL</th><th class="c">DS</th><th class="c">Parked</th><th class="c">Mar 18 NI</th></tr>
-      <tr><td><strong>Raksha</strong></td><td class="tc">35</td><td class="tc" style="color:var(--amb)">12</td><td class="tc">9</td><td class="tc" style="color:var(--blue)">3</td><td class="tc" style="color:var(--green)">3</td><td class="tc" style="color:var(--green);font-weight:700">2</td><td class="tc">0</td><td class="tc">4</td><td class="tc">10</td></tr>
-      <tr><td><strong>Sriharan</strong></td><td class="tc">26</td><td class="tc" style="color:var(--amb)">9</td><td class="tc">12</td><td class="tc" style="color:var(--blue)">1</td><td class="tc" style="color:var(--green)">3</td><td class="tc">0</td><td class="tc" style="color:var(--amb)">1</td><td class="tc">0</td><td class="tc">6</td></tr>
-      <tr><td><strong>Pranshu</strong></td><td class="tc">20</td><td class="tc" style="color:var(--red)">9</td><td class="tc">6</td><td class="tc" style="color:var(--blue)">3</td><td class="tc">1</td><td class="tc">0</td><td class="tc">0</td><td class="tc">0</td><td class="tc" style="color:var(--red)">6</td></tr>
-      <tr style="background:#1B2A4A">
-        <td style="color:#fff;font-weight:700">TOTAL</td><td class="tc" style="color:var(--gold)">81</td>
-        <td class="tc" style="color:var(--gold)">30</td><td class="tc" style="color:var(--gold)">27</td>
-        <td class="tc" style="color:var(--gold)">7</td><td class="tc" style="color:var(--gold)">7</td>
-        <td class="tc" style="color:var(--gold);font-weight:700">2</td>
-        <td class="tc" style="color:var(--gold)">1</td><td class="tc" style="color:var(--gold)">4</td>
-        <td class="tc" style="color:var(--gold)">22</td>
-      </tr>
-    </table>
-    <div class="ins ig" style="margin-top:8px">Mar 18+ batch: Raksha pulled 2 SQLs from the batch (Amaraa + Sapience) — best BD output from the new source. Sriharan: 3 CBs but 1 DS is NextLeap (ICP miss). Pranshu: 9 discards, 6 NI from 20 leads = 30% NI rate, worst in batch. Mar 18+ batch had too many non-D2C/B2B companies (aerospace, SAP, IT) — filter issue.</div>
-  </div>
-</div>
-
-<div class="sec">
-  <div class="sec-hd"><span class="sbadge">B4</span><span class="stitle">Revenue Attribution</span></div>
+  <div class="sec-hd"><span class="sbadge">B3</span><span class="stitle">Discard Health — Full FY Analysis</span></div>
   <div class="sec-body">
     <div class="two">
       <div>
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--navy);margin-bottom:8px">All-time revenue by BD</div>
-        <div class="src-row"><div class="src-name">Raksha Gangadhar</div><div class="src-bar"><div class="src-bf" style="width:100%;background:var(--green)"></div></div><div class="src-val" style="color:var(--green)">₹15k</div></div>
-        <div class="src-row"><div class="src-name">Sriharan VS</div><div class="src-bar"><div class="src-bf" style="width:0%;background:var(--amb)"></div></div><div class="src-val" style="color:var(--muted)">₹0</div></div>
-        <div class="src-row"><div class="src-name">Pranshu Jain</div><div class="src-bar"><div class="src-bf" style="width:0%;background:var(--red)"></div></div><div class="src-val" style="color:var(--muted)">₹0</div></div>
-        <div class="ins ia" style="margin-top:8px">Sriharan holds 3 ATPs (₹15k potential) but zero collected. Pranshu has not generated a single ATP. If Sriharan's 3 ATPs close April 1st, he overtakes Raksha on pipeline value. But pipeline value ≠ collected revenue.</div>
+        <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px">All-time discard reasons (755 total)</div>
+        <div class="src-row"><div class="src-name">Not Interested</div><div class="src-bar"><div class="src-bf" style="width:100%;background:var(--red)"></div></div><div class="src-val" style="color:var(--red)">197</div></div>
+        <div class="src-row"><div class="src-name">Missing Contact</div><div class="src-bar"><div class="src-bf" style="width:87.8%;background:var(--blue)"></div></div><div class="src-val" style="color:var(--blue)">173</div></div>
+        <div class="src-row"><div class="src-name">UNFILLED ⚠️</div><div class="src-bar"><div class="src-bf" style="width:89.8%;background:var(--purp)"></div></div><div class="src-val" style="color:var(--purp)">177</div></div>
+        <div class="src-row"><div class="src-name">Not our ICP</div><div class="src-bar"><div class="src-bf" style="width:50.8%;background:var(--amb)"></div></div><div class="src-val" style="color:var(--amb)">100</div></div>
+        <div class="src-row"><div class="src-name">Unresponsive</div><div class="src-bar"><div class="src-bf" style="width:36.5%;background:var(--muted)"></div></div><div class="src-val">72</div></div>
+        <div class="src-row"><div class="src-name">Wrong Contact</div><div class="src-bar"><div class="src-bf" style="width:11.2%;background:#888"></div></div><div class="src-val">22</div></div>
+        <div class="ins ir" style="margin-top:8px"><strong>177 unfilled discards (23.4%)</strong> = pipeline intelligence destroyed. Teams can never re-engage these intelligently. Raksha: 73 unfilled = critical. This is the single most solvable problem on the team right now.</div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--navy);margin-bottom:8px">Pipeline value by BD</div>
-        <div class="src-row"><div class="src-name">Sriharan (3 ATP)</div><div class="src-bar"><div class="src-bf" style="width:75%;background:var(--purp)"></div></div><div class="src-val" style="color:var(--purp)">₹15k</div></div>
-        <div class="src-row"><div class="src-name">Raksha (1 ATP)</div><div class="src-bar"><div class="src-bf" style="width:25%;background:var(--amb)"></div></div><div class="src-val" style="color:var(--amb)">₹5k</div></div>
-        <div class="src-row"><div class="src-name">Pranshu (0 ATP)</div><div class="src-bar"><div class="src-bf" style="width:0%;background:var(--red)"></div></div><div class="src-val" style="color:var(--muted)">₹0</div></div>
-        <div class="ins ig" style="margin-top:8px">Combined potential: ₹20k in ATP pipeline. If April 1 week converts all 4 ATPs → ₹35k all-time = more than double current revenue.</div>
+        <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px">NI rate by BD (% of their discards)</div>
+        <div class="src-row"><div class="src-name">Pranshu Jain</div><div class="src-bar"><div class="src-bf" style="width:100%;background:var(--red)"></div></div><div class="src-val" style="color:var(--red)">33.7%</div></div>
+        <div class="src-row"><div class="src-name">Raksha Gangadhar</div><div class="src-bar"><div class="src-bf" style="width:83.5%;background:var(--amb)"></div></div><div class="src-val" style="color:var(--amb)">28.1%</div></div>
+        <div class="src-row"><div class="src-name">Sriharan VS</div><div class="src-bar"><div class="src-bf" style="width:63.8%;background:var(--green)"></div></div><div class="src-val" style="color:var(--green)">21.4%</div></div>
+        <div style="margin-top:8px;font-size:11px;font-weight:700;color:var(--navy);margin-bottom:6px">Not ICP rate by BD (% of their discards)</div>
+        <div class="src-row"><div class="src-name">Sriharan VS</div><div class="src-bar"><div class="src-bf" style="width:100%;background:var(--red)"></div></div><div class="src-val" style="color:var(--red)">16.2%</div></div>
+        <div class="src-row"><div class="src-name">Raksha Gangadhar</div><div class="src-bar"><div class="src-bf" style="width:87.6%;background:var(--amb)"></div></div><div class="src-val" style="color:var(--amb)">14.3%</div></div>
+        <div class="src-row"><div class="src-name">Pranshu Jain</div><div class="src-bar"><div class="src-bf" style="width:72.8%;background:var(--blue)"></div></div><div class="src-val" style="color:var(--blue)">11.7%</div></div>
+        <div class="ins ia" style="margin-top:8px">Sriharan has the highest Not ICP rate (16.2%) — missing contact info (71 missing contact discards, highest on team) and dialling wrong-category leads (34 not-ICP). Pranshu has highest NI — pitch or opener problem. Raksha: fill rate the critical fix.</div>
       </div>
     </div>
   </div>
@@ -486,244 +502,196 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
 
 </div>
 <div class="footer">
-  <div>AIA Dashboard · BD Performance · Mar 30 2026</div>
-  <div style="display:flex;gap:5px">
-    <span class="fpill">Raksha: only PD earner</span><span class="fpill">Pranshu: 0 ATP/PD — needs intervention</span><span class="fpill">177 unfilled discards</span>
+  <div>AIA Dashboard · BD Performance · FY End 31 Mar 2026</div>
+  <div style="display:flex;gap:4px">
+    <span class="fpill">Sriharan: 4 ATPs 0 PD — close gap</span><span class="fpill">Pranshu: 0 ATP — intervention needed</span><span class="fpill">177 unfilled discards</span>
   </div>
 </div>
 </div>
 
-<!-- ═══ PAGE 3: FOCUS · IGNORE · SIGNALS ═══ -->
+<!-- ══════ PAGE 3: FOCUS · IGNORE · SIGNALS ══════ -->
 <div class="page" id="p3">
 <div class="hd">
-  <div class="hd-title">AIA <span>Focus · Ignore · Signals</span></div>
-  <div class="hd-sub">Stage-by-stage customers to push · Customers to deprioritise · Key conversion signals from live data</div>
+  <div class="hd-title">AIA <span>Focus · Ignore · New Signals</span></div>
+  <div class="hd-sub">Stack-ranked deals to push · Leads to deprioritise · New buying signals from today's calls</div>
 </div>
 <div class="main">
 
-<!-- CUSTOMERS TO FOCUS -->
 <div class="sec">
   <div class="sec-hd"><span class="sbadge">F1</span><span class="stitle">Customers to Focus — Stack-Ranked by EV + Urgency</span></div>
   <div class="sec-body">
     <div class="three">
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Tier 1 — Close in 5 days</div>
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Tier 1 — Close April 1-3</div>
         <div class="dc2 hot">
-          <div class="dn">yuderma · Raksha</div>
-          <div class="dm">ATP · 18d · 7d silent · ₹5,000 at stake</div>
-          <div class="db">D2C skincare, ₹50L-₹1Cr/month, in-house CA but "auditing season." 18 days since ATP. Silent since Mar 23. This deal dies if not called April 1.</div>
-          <div class="da" style="color:var(--red)">→ Apr 1 9 AM. "What's the one thing holding you back?"</div>
+          <div class="dn">Aravi Organic · Sriharan · ATP</div>
+          <div class="dm">ATP 7d · ₹5k · April 1 confirmed</div>
+          <div class="db">Organic FMCG D2C. Krinesh confirmed April 1st week. Invoice ready. No call needed — just send.</div>
+          <div class="da" style="color:var(--green)">→ Invoice Apr 1 8 AM. Done.</div>
         </div>
         <div class="dc2 hot">
-          <div class="dn">Aravi Organic · Sriharan</div>
-          <div class="dm">ATP · 6d · Apr 1 confirmed · ₹5,000</div>
-          <div class="db">Organic FMCG, D2C+B2B, year-end close. Krinesh committed to April 1st week. Invoice must be ready to send.</div>
-          <div class="da" style="color:var(--green)">→ Send invoice Apr 1 morning. No call needed — just payment.</div>
+          <div class="dn">inkup.co.in · Sriharan · ATP</div>
+          <div class="dm">ATP 19d · ₹5k · April 1 confirmed · FY transition</div>
+          <div class="db">D2C electronics. FY payment confirmed. Send invoice Apr 1.</div>
+          <div class="da" style="color:var(--green)">→ Invoice Apr 1 8 AM. Done.</div>
         </div>
         <div class="dc2 hot">
-          <div class="dn">inkup.co.in · Sriharan</div>
-          <div class="dm">ATP · 18d · Apr 1 confirmed · ₹5,000</div>
-          <div class="db">D2C electronics. FY end payment confirmed. Last touch Mar 23. Send invoice Apr 1.</div>
-          <div class="da" style="color:var(--green)">→ Invoice Apr 1. "Happy April! Invoice attached."</div>
+          <div class="dn">unwood.in · Sriharan · ATP</div>
+          <div class="dm">ATP today · F2F trust deal · Year-end callback</div>
+          <div class="db">F2F visit + SOW reviewed. Vishal in year-end meeting. Will callback post-Mar 31. High confidence deal.</div>
+          <div class="da" style="color:var(--green)">→ Callback Apr 1 AM. "FY done — ready to start?"</div>
         </div>
         <div class="dc2 warn">
-          <div class="dn">petvillepetstore · Sriharan</div>
-          <div class="dm">ATP · 5d · NDA dispute · ₹5,000 at risk</div>
-          <div class="db">Ayurvedic pet D2C, international exports. Karan DNP, unresponsive 5 days after T&C sent instead of NDA.</div>
-          <div class="da" style="color:var(--amb)">→ "Would you prefer I send an NDA? Happy to do it right now." WA + call today.</div>
+          <div class="dn">yuderma · Raksha · ATP</div>
+          <div class="dm">ATP 19d · ₹5k · 8d silent · CRITICAL</div>
+          <div class="db">D2C skincare. 19 days ATP. 8 days silent. Last touch Mar 23. This dies if not called April 1 first thing.</div>
+          <div class="da" style="color:var(--red)">→ Apr 1 9 AM. Last call. "What's the one thing holding you back?"</div>
+        </div>
+        <div class="dc2 warn">
+          <div class="dn">petvillepetstore · Sriharan · ATP</div>
+          <div class="dm">ATP 6d · Both founders DNP today · NDA unresolved</div>
+          <div class="db">Ayurvedic pet D2C + international. Both Divyanshu + Karan unresponsive 6 days. NDA not sent.</div>
+          <div class="da" style="color:var(--red)">→ Apr 1 WA only: "Sending NDA now — confirm?" Park if no reply by Apr 2.</div>
         </div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Tier 2 — Demo → SQL this week</div>
+        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Tier 2 — Demo → SQL → ATP this week</div>
         <div class="dc2 hot">
-          <div class="dn">Amaraa Fragrances · Raksha</div>
-          <div class="dm">SQL today · Founder managing solo via Excel · Fragrance D2C</div>
-          <div class="db">Amita tracking everything in Excel alone. No finance team. Proposal sent. Book demo Tue/Wed. Fresh and hot.</div>
-          <div class="da" style="color:var(--green)">→ Demo this week. Amazon reconciliation hook ready.</div>
+          <div class="dn">fyn-x.com · Pranshu · FU</div>
+          <div class="dm">FU · "Accounting is a bit of a mess" · April 1 re-engage</div>
+          <div class="db">Ankita committed: "after March 31 I'll contact Kunal." Accounting outsourced to auditors, no P&L tracker. Pranshu's best lead entering April.</div>
+          <div class="da" style="color:var(--green)">→ Apr 1 9 AM call. "Ankita, March 31 is done — ready to connect with Kunal?"</div>
         </div>
         <div class="dc2 hot">
-          <div class="dn">unwood.in · Sriharan</div>
-          <div class="dm">DC · F2F done · Revised SOW sent today</div>
-          <div class="db">Sustainable furniture D2C. Office visit happened. Revised SOW just sent. Vishal reviewing over weekend. Strong trust.</div>
-          <div class="da" style="color:var(--green)">→ FU call Apr 1. "Questions on revised SOW?" → ATP this week.</div>
+          <div class="dn">Amaraa Fragrances · Raksha · SQL</div>
+          <div class="dm">SQL 30 Mar · Solo founder · Excel · Fragrance D2C</div>
+          <div class="db">Amita solo on Excel, pain confirmed, proposal sent. DNP FY end. Demo this week.</div>
+          <div class="da" style="color:var(--green)">→ Demo call Apr 1 or 2. First priority.</div>
+        </div>
+        <div class="dc2">
+          <div class="dn">cheerbox.in · Raksha · FU</div>
+          <div class="dm">FU 31 Mar · "Manually tracking — wants to solve"</div>
+          <div class="db">Verbatim: "manually tracking all of this and she wants to see the details." Clean buying signal. First demo call.</div>
+          <div class="da" style="color:var(--green)">→ Demo ask Apr 1. "15 minutes to show you what this looks like?"</div>
+        </div>
+        <div class="dc2">
+          <div class="dn">aekart.in · Raksha · FU</div>
+          <div class="dm">FU 31 Mar · "Lot of spreadsheets" · Logistics tech D2C</div>
+          <div class="db">"Managing everything through Excel and it is a lot of spreadsheets." Classic pain. Wants to check details before call.</div>
+          <div class="da" style="color:var(--green)">→ Demo ask Apr 1. Data breach angle resonated.</div>
         </div>
         <div class="dc2 info">
-          <div class="dn">houseofkosha.in · Sriharan</div>
-          <div class="dm">DC · Proposal ₹7k/month · Shagun+Kopal reviewing</div>
-          <div class="db">Premium ethnic saree D2C. External CA, manual Excel. Co-founders + accountant reviewing. FU Monday/Tuesday.</div>
-          <div class="da" style="color:var(--blue)">→ Apr 1: "Have you had a chance to review the proposal?"</div>
-        </div>
-        <div class="dc2 info">
-          <div class="dn">humanhydro.com · Raksha</div>
-          <div class="dm">DC · Tally confusion · post-travel · ₹33k/month potential</div>
-          <div class="db">Copper bottles, 50 SKUs, 7 GST states, 8-10k transactions. Highest EV deal in pipeline. Tally integration doc sent. Co-founder to review.</div>
-          <div class="da" style="color:var(--blue)">→ SQL call Apr 1 PM. "Have you reviewed the Tally integration doc with your co-founder?"</div>
+          <div class="dn">humanhydro.com · Raksha · DC</div>
+          <div class="dm">DC 23 Mar · ₹33k/month potential · Tally confusion</div>
+          <div class="db">Highest EV deal in pipeline. 7 GST states, 50 SKUs. SQL call long overdue post-travel.</div>
+          <div class="da" style="color:var(--blue)">→ Apr 1 PM. SQL call. "Reviewed Tally doc with co-founder?"</div>
         </div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--purp);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Tier 3 — Warm leads with highest intent</div>
+        <div style="font-size:11px;font-weight:700;color:var(--purp);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Tier 3 — Nurture + re-engage April</div>
         <div class="dc2">
-          <div class="dn">Helveticans · Raksha</div>
-          <div class="dm">FU · Mar 27 · "Looking for accounting" signal</div>
-          <div class="db">"Actually looking for something like this" — verbatim. Wants to connect Thu/Fri. Monthly accountant setup. High intent unlocked by AIA pitch.</div>
-          <div class="da" style="color:var(--green)">→ Call today/Apr 1. Direct demo ask.</div>
+          <div class="dn">Aristobrat · Pranshu · FU</div>
+          <div class="dm">FU · "Busy year end · connect after a week"</div>
+          <div class="db">Fashion D2C kidswear. Year-end busy signal. Re-engage April 7. Good ICP.</div>
+          <div class="da" style="color:var(--muted)">→ Apr 7 call. "Back from year end?"</div>
         </div>
         <div class="dc2">
-          <div class="dn">orae.in · Pranshu</div>
-          <div class="dm">SQL · 7d · P&L + CM1/CM2 focus · Accounts team</div>
-          <div class="db">Specific demo agenda confirmed. Accounts team to join. Shubham at home. WA sent today. Must lock slot.</div>
-          <div class="da" style="color:var(--amb)">→ Lock demo Apr 1-3. Do not let this cool further.</div>
+          <div class="dn">Healeo Nutrition · Pranshu · CB</div>
+          <div class="dm">CB · Nutraceuticals D2C · Amazon+Flipkart</div>
+          <div class="db">Showed product interest, has multi-platform presence. Re-try with sharper Amazon reconciliation hook.</div>
+          <div class="da" style="color:var(--blue)">→ Apr 1. Amazon TCS hook: "Are you recovering credits monthly?"</div>
         </div>
         <div class="dc2">
-          <div class="dn">Bliss Wellness · Sriharan</div>
-          <div class="dm">FU · ₹10-50Cr nutraceuticals · 100+ SKUs · Amazon+Flipkart</div>
-          <div class="db">Massive D2C brand, multi-marketplace, 100+ SKUs. 4 DNPs. Send WA with FY-end hook. High EV if connected.</div>
-          <div class="da" style="color:var(--muted)">→ FY-end WA blast Apr 1. High EV lead.</div>
+          <div class="dn">Marc Loire Fashions · Pranshu · CB</div>
+          <div class="dm">CB · Premium menswear D2C · Growth stage</div>
+          <div class="db">4 DNPs but premium D2C, multi-channel, strong ICP. CB committed.</div>
+          <div class="da" style="color:var(--muted)">→ Apr 1-2. Multi-channel reconciliation hook.</div>
         </div>
         <div class="dc2">
-          <div class="dn">arcillahome.com · Raksha</div>
-          <div class="dm">CB · Wife using Excel+Tally · "Really wants this service"</div>
-          <div class="db">Home decor D2C. Staff explicitly said founder "really wants this service." Wife managing Excel+Tally manually. CB committed.</div>
-          <div class="da" style="color:var(--green)">→ CB as committed. Confirm Apr date.</div>
+          <div class="dn">Nirvasa · Raksha · CB</div>
+          <div class="dm">CB · Driving · called back to confirm</div>
+          <div class="db">Health/wellness D2C. Was driving, said to call back. Promising category.</div>
+          <div class="da" style="color:var(--muted)">→ Apr 1 morning.</div>
         </div>
         <div class="dc2">
-          <div class="dn">sbooch.com · Pranshu</div>
-          <div class="dm">FU · Kombucha D2C · Amazon+Shopify+Wholesale · Accounts team CC'd</div>
-          <div class="db">Founder forwarded to accounts team. Back from travel Mar 29. Accounts team to respond.</div>
-          <div class="da" style="color:var(--blue)">→ Follow up with accounts team Apr 1.</div>
+          <div class="dn">sbooch.com · Pranshu · FU</div>
+          <div class="dm">FU · Kombucha D2C · Amazon+Shopify+wholesale · Accounts team CC'd</div>
+          <div class="db">Accounts team was forwarded the mail. Niraj back from travel Mar 29. Follow up with accounts team.</div>
+          <div class="da" style="color:var(--muted)">→ Apr 1. "Did accounts team get a chance to review?"</div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- CUSTOMERS TO IGNORE -->
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">F2</span><span class="stitle">Customers to Ignore / Park — Patterns That Signal Disqualification</span></div>
+  <div class="sec-hd"><span class="sbadge">F2</span><span class="stitle">Customers to Ignore / Park — Updated for FY End</span></div>
   <div class="sec-body">
     <div class="two">
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Park or discard immediately</div>
+        <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Park / discard immediately</div>
         <div class="dc2 crit">
           <div class="dn">NextLeap Aeronautics · Sriharan [DS]</div>
-          <div class="dm">Reason: 4 accountants + 2 auditors + 1 CA in-house · Aerospace B2B</div>
-          <div class="db">Finance function fully staffed. They want an MIS reporting tool only, not reconciliation. Classic discard signal — finance team exists. Demo scheduled is a waste of BD time.</div>
-          <div class="da" style="color:var(--red)">→ Park NOW. Do not run demo.</div>
+          <div class="dm">4 accountants + 2 auditors + 1 CA · Aerospace B2B · ICP MISS</div>
+          <div class="db">Finance function fully staffed. Has been in DS for 7 days. Cancel demo and park. Every day in DS is a waste of pipeline.</div>
+          <div class="da" style="color:var(--red)">→ Park TODAY. Non-negotiable.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">Varchas Aerospace · Raksha [CB]</div>
-          <div class="dm">Aerospace & Defence B2B · "getting too many calls"</div>
-          <div class="db">Aerospace B2B = non-ICP category. B2G procurement model. Mr Praveen said call after year-end. Park with 60-day re-check.</div>
-          <div class="da" style="color:#666">→ Park. Aerospace = confirmed non-converting category.</div>
+          <div class="dn">experiencenoir.in · Pranshu [DC]</div>
+          <div class="dm">Demo done · "Nice to have not must-have" · Pricing pushback</div>
+          <div class="db">Family CA + accountant setup working. "Want not need." One follow-up. If no movement by Apr 3 → park.</div>
+          <div class="da" style="color:var(--amb)">→ One WA: "Based on our demo, what would make this a must-have?" If no clear answer → Park.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">experiencenoir.in · Pranshu [DS]</div>
-          <div class="dm">Pranshu flagged: "might not have need"</div>
-          <div class="db">Luxury hospitality/experiences brand. No clear marketplace presence. Pranshu's own doubt = disqualify unless Amazon/Shopify confirmed. Don't run demo on doubt.</div>
-          <div class="da" style="color:var(--amb)">→ Qualify: do they sell on Amazon? If no → Park.</div>
+          <div class="dn">houseofkosha.in · Sriharan [Parked today]</div>
+          <div class="dm">Parked 31 Mar · "Not required right now · maybe next quarter"</div>
+          <div class="db">Shagun (finance decision-maker) said "not required." Monitor for: LinkedIn job post, new marketplace, Instagram shopping launch.</div>
+          <div class="da" style="color:#666">→ Re-engage July. Watch for buying signals.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">Sapience Agribusiness · Raksha [SQL]</div>
-          <div class="dm">B2B consulting, "lean business right now"</div>
-          <div class="db">Agribusiness consulting = B2B, project-based, not D2C. Somu Kumar said "business is lean." Demo post-March 31. Low EV. Qualify revenue first before investing demo time.</div>
-          <div class="da" style="color:var(--amb)">→ Qualify revenue before demo. If below ₹5L/month → Park.</div>
+          <div class="dn">EldersIndia · Raksha [FU — but flagged]</div>
+          <div class="dm">FU today · "Recently hired CFO"</div>
+          <div class="db">Founder said they "recently hired CFO." CFO in team = finance function exists = auto-discard. Currently in FU but should be moved to Discard.</div>
+          <div class="da" style="color:var(--red)">→ Discard: "Not our ICP — CFO hired."</div>
         </div>
         <div class="dc2 ign">
           <div class="dn">mrobotics.co.in · Sriharan [CB]</div>
-          <div class="dm">Robotics/automation B2B · Industrial manufacturing</div>
-          <div class="db">Industrial robotics = B2B, likely has accounting systems, non-D2C. Wrong ICP entirely. Receptionist callback.</div>
-          <div class="da" style="color:#666">→ Park on callback. Not our ICP.</div>
+          <div class="dm">CB · Robotics + automation B2B · Industrial</div>
+          <div class="db">Industrial robotics B2B. Not D2C. Receptionist not connecting to founder. Non-ICP industry.</div>
+          <div class="da" style="color:#666">→ Park on next callback. Non-ICP.</div>
+        </div>
+        <div class="dc2 ign">
+          <div class="dn">petvillepetstore [ATP → if no response Apr 2]</div>
+          <div class="dm">Both founders unresponsive 6 days · ATP at risk</div>
+          <div class="db">If no response to Apr 1 NDA WA → park ATP by Apr 2. Don't hold ATP open indefinitely.</div>
+          <div class="da" style="color:var(--red)">→ Park ATP if no reply Apr 2.</div>
         </div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Patterns that predict non-conversion</div>
-        <div class="ac warn">
-          <div class="act" style="color:var(--amb)">Pattern 1: 5+ DNPs with no WA engagement</div>
-          <div class="acb">Leads with 4+ unanswered calls and no WA reply convert at under 2%. After 5 attempts with no engagement at all (not even "call later") — park. Do not continue dialling. Examples: theeonai.com (3 DNPs), ksa.jashnfoods.com (3 DNPs).</div>
+        <div style="font-size:11px;font-weight:700;color:var(--purp);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">New buying signal patterns from today</div>
+        <div class="ac good">
+          <div class="act" style="color:var(--green)">"Manually tracking — wants to solve" = buy signal</div>
+          <div class="acb">cheerbox.in today: "manually tracking all of this and wants to solve it." This is a direct expression of pain without prompting. When a founder volunteers that they want to fix manual tracking — they are pre-sold. Next step: demo, not more pitching.</div>
+          <div class="aca" style="color:var(--green)">→ Direct demo ask: "15 minutes to show you what automated looks like for a brand your size?"</div>
+        </div>
+        <div class="ac good">
+          <div class="act" style="color:var(--green)">"Lot of spreadsheets" = buy signal</div>
+          <div class="acb">aekart.in today: "managing everything through Excel and it is a lot of spreadsheets." When a founder describes their current setup as burdensome ("a lot of"), they are acknowledging the pain is real and growing. Reinforce: "That's exactly what we eliminate."</div>
+          <div class="aca" style="color:var(--green)">→ Echo the pain back: "A lot of spreadsheets + planning to build ERP = the exact moment to talk to us before you over-invest."</div>
         </div>
         <div class="ac warn">
-          <div class="act" style="color:var(--amb)">Pattern 2: "We have a CA" without specific CA complaint</div>
-          <div class="acb">If they say "we have a CA" and show zero frustration with the CA setup, the pain is not present. Only engage further if they mention: CA only comes monthly, or can't get real-time P&L, or have to chase the CA. Swadesi Way discarded correctly.</div>
+          <div class="act" style="color:var(--amb)">"Nice to have not must-have" = park signal</div>
+          <div class="acb">experiencenoir.in DC outcome: "core challenge lies in cashflow visibility but it is not perceived as a critical pain yet." When a prospect says "nice to have" after a demo, the pain hasn't crossed the threshold. Pricing pushback follows. This deal will not close without a triggering event (tax notice, CA leaving, new marketplace).</div>
+          <div class="aca" style="color:var(--amb)">→ One question: "What would need to change for this to feel urgent?" If vague answer → park.</div>
         </div>
         <div class="ac crit">
-          <div class="act" style="color:var(--red)">Pattern 3: Finance team confirmed in-house</div>
-          <div class="acb">Craftech 360: "they already have an accounting team." Phono Technologies: "6 member finance team." Any lead where the team has dedicated finance headcount — discard immediately with "Not our ICP." NextLeap: 4 accountants = should never have reached DS.</div>
-        </div>
-        <div class="ac crit">
-          <div class="act" style="color:var(--red)">Pattern 4: B2B/B2G only, no D2C/marketplace</div>
-          <div class="acb">Aerospace (NextLeap, Varchas, Okulo), IT services (iOSYS, Zyple SAP), HR staffing (SHRS), Media production (SHUBHARAMBH), Consulting (Pride Circle, Frantiger). These categories have never converted and won't. Pre-filter before dialling.</div>
+          <div class="act" style="color:var(--red)">"Recently hired CFO" = immediate discard signal</div>
+          <div class="acb">EldersIndia today: founder said they outsource CA but "recently hired CFO." A CFO hire means the finance function is being professionalised in-house. AIA solves for the absence of a finance function — not a replacement for one that's actively being built.</div>
         </div>
         <div class="ac info">
-          <div class="act" style="color:var(--blue)">Pattern 5: "Not now, maybe in 3 months"</div>
-          <div class="acb">vardhman sleepwear: "going fine, will need it when we scale." Abekus: "few months down the line." These are Parked, not discarded. Set n8n alert for: new marketplace added, job post detected. Then escalate automatically. Don't manually follow up — let signals trigger.</div>
+          <div class="act" style="color:var(--blue)">bluemonkey qualification needed: has in-house accounting team</div>
+          <div class="acb">bluemonkey.in scheduled for demo (Pranshu). Multi-channel D2C, Tally, Unicommerce, heavy manual effort. BUT: note says "has an in-house accounting team." Before demo, qualify: how large is the team and what do they spend time on? If team is 3+ people doing reconciliation daily — they may not need AIA. If it's 1-2 people doing manual data entry → perfect ICP.</div>
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- SIGNALS -->
-<div class="sec">
-  <div class="sec-hd"><span class="sbadge">F3</span><span class="stitle">Signals to Focus — Ranked by Conversion Power</span></div>
-  <div class="sec-body">
-    <div class="two">
-      <div>
-        <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.4px">On-call signals that confirm buyer intent</div>
-        <div style="margin-bottom:6px">
-          <span class="sig-chip sig-max">🔥 MAX</span> <strong>Founder books demo immediately without asking for details first</strong>
-        </div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">unwood came to office. Aravi confirmed April 1 on first VP call. Never add friction.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-max">🔥 MAX</span> <strong>"Our accounting is a bit of a mess right now"</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">Verbatim from fyn-x Ankita. Pre-sold. Next step = qualify, not pitch.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-max">🔥 MAX</span> <strong>Brings accounting team to demo OR asks them to join</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">orae: accounts team joining. When a buying committee forms, purchase is imminent.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-max">🔥 MAX</span> <strong>Founder managing books via Excel / Google Sheets</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">petvillepetstore (Google Sheets), humanhydro (Excel profitability), arcillahome (wife using Excel + Tally). 100% of paid deals had this.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-high">HIGH</span> <strong>Asks for pricing mid-call</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">Dioste: "asked the price" → PD same session. Price inquiry = serious evaluation. Never deflect — anchor to value first.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-high">HIGH</span> <strong>Mentions CM1 / CM2 / reconciliation / TCS unprompted</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">rtribe's Rhea: "don't have visibility on CM1/CM2." When they use our vocabulary, they've already defined the problem.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-high">HIGH</span> <strong>Forwards details to accounts team or co-founder</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">sbooch: "forwarded to accounts team." Internal evaluation = purchase approaching. Follow up with the accounts team too.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-med">MED</span> <strong>"Call later today" or specific callback time given</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">Timing deflection ≠ rejection. Helveticans: "connect Thu/Fri." Always confirm exact time before ending call.</div>
-      </div>
-      <div>
-        <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.4px">Pre-call signals (from data extraction)</div>
-        <div style="margin-bottom:6px"><span class="sig-chip sig-max">🔥 MAX</span> <strong>Active LinkedIn job post: Accountant / Tally Operator / Bookkeeper</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">They feel the pain today and are actively trying to solve it. Hook: "Before you hire — worth seeing if we can solve this at a fraction of the cost."</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-max">🔥 MAX</span> <strong>Amazon FBA seller confirmed + 0 finance roles in LinkedIn team</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">The combination that predicts every paid deal. humanhydro, petvillepetstore, Root Botanie, stanedition all had this.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-max">🔥 MAX</span> <strong>3+ GST state registrations</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">Multi-state = Amazon FBA warehouse complexity. humanhydro at 7 states = ₹33k/month deal. Each state = more reconciliation pain.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-high">HIGH</span> <strong>Shopify + Amazon + Flipkart simultaneously</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">3 channels = 3 separate reconciliation streams. petvillepetstore: Shopify + Amazon + Flipkart. Same for humanhydro.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-high">HIGH</span> <strong>Team size 5-50, founded 2020-2024</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:8px">Core ICP zone. All 3 PD + 4 ATP deals fall in this band.</div>
-
-        <div style="margin-bottom:8px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.4px;margin-top:12px">Discard signals — stop calling if these are confirmed</div>
-        <div style="margin-bottom:6px"><span class="sig-chip sig-disc">DISC</span> <strong>Finance Manager / CFO / Accounting team exists in-house</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;padding-left:8px">Craftech, Phono (6 member team), NextLeap (4 accountants). Finance function = not a buyer. Discard immediately.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-disc">DISC</span> <strong>Co-founder is a CA</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;padding-left:8px">CarEasy pattern. If co-founder has CA qualification = -50pts, instant discard.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-disc">DISC</span> <strong>B2B/B2G primary with no D2C/marketplace</strong></div>
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;padding-left:8px">Aerospace, IT services, SAP partners, defence, consulting = 30 wasted dials in Mar 18+ batch alone.</div>
-
-        <div style="margin-bottom:6px"><span class="sig-chip sig-disc">DISC</span> <strong>Own finance tool built or SAP/ERP in use</strong></div>
-        <div style="font-size:11px;color:var(--muted);padding-left:8px">Zyple (SAP partner), Phono (uses CRED FLOW). Enterprise ERP = not a buyer.</div>
       </div>
     </div>
   </div>
@@ -731,196 +699,185 @@ tr:last-child td{border-bottom:none}tr:nth-child(even) td{background:#FAFBFD}tr:
 
 </div>
 <div class="footer">
-  <div>AIA Dashboard · Focus/Ignore/Signals · Mar 30 2026</div>
-  <div style="display:flex;gap:5px">
-    <span class="fpill">yuderma: Apr 1 or dead</span><span class="fpill">NextLeap: park immediately</span><span class="fpill">Helveticans: hot intent</span>
+  <div>AIA Dashboard · Focus/Ignore/Signals · FY End 31 Mar 2026</div>
+  <div style="display:flex;gap:4px">
+    <span class="fpill">fyn-x: Apr 1 Pranshu's best</span><span class="fpill">cheerbox+aekart: new hot signals</span><span class="fpill">EldersIndia: discard (CFO hired)</span>
   </div>
 </div>
 </div>
 
-<!-- ═══ PAGE 4: NEW SOURCE MAR 18+ ═══ -->
+<!-- ══════ PAGE 4: NEW SOURCE MAR 18+ ══════ -->
 <div class="page" id="p4">
 <div class="hd">
-  <div class="hd-title">AIA <span>New Source Leads</span> <span style="font-size:13px;font-weight:500;opacity:.5">· Mar 18–30 · 81 Leads</span></div>
-  <div class="hd-sub">AI-enriched lead batch · All imported Mar 18–30 · Deal Source field blank on all 81</div>
+  <div class="hd-title">AIA <span>New Source Leads</span> <span style="font-size:13px;font-weight:500;opacity:.5">· Mar 18–31 · 100 Leads</span></div>
+  <div class="hd-sub">AI-enriched batch · All imported Mar 18–31 · Deal Source = blank on all 100 · 19 added today</div>
 </div>
 <div class="main">
 
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">S1</span><span class="stitle">Funnel — All 81 New Source Leads</span></div>
+  <div class="sec-hd"><span class="sbadge">S1</span><span class="stitle">Funnel — All 100 New Source Leads · Mar 18–31</span></div>
   <div class="sec-body">
     <div class="funnel">
-      <div class="fb"><div class="fn" style="color:#1A5276">81</div><div class="fl">Total Mar 18+</div><div class="fp">12 days</div></div>
-      <div class="fb"><div class="fn" style="color:#C0392B">30</div><div class="fl">Discarded</div><div class="fp">37.0%</div></div>
-      <div class="fb"><div class="fn" style="color:#C0392B">27</div><div class="fl">DNP</div><div class="fp">33.3%</div></div>
-      <div class="fb"><div class="fn" style="color:#854F0B">7</div><div class="fl">Follow-up</div><div class="fp">active</div></div>
-      <div class="fb"><div class="fn" style="color:#1A7A4A">7</div><div class="fl">Call Back</div><div class="fp">committed</div></div>
+      <div class="fb"><div class="fn" style="color:#1A5276">100</div><div class="fl">Total</div><div class="fp">Mar 18–31</div></div>
+      <div class="fb"><div class="fn" style="color:#C0392B">37</div><div class="fl">Discarded</div><div class="fp">37.0%</div></div>
+      <div class="fb"><div class="fn" style="color:#C0392B">41</div><div class="fl">DNP</div><div class="fp">41.0%</div></div>
+      <div class="fb"><div class="fn" style="color:#854F0B">8</div><div class="fl">Follow-up</div><div class="fp">active</div></div>
+      <div class="fb"><div class="fn" style="color:#1A7A4A">6</div><div class="fl">Call Back</div><div class="fp">committed</div></div>
       <div class="fb"><div class="fn" style="color:#6C3483">2</div><div class="fl">SQL</div><div class="fp">Amaraa+Sapience</div></div>
       <div class="fb"><div class="fn" style="color:#854F0B">1</div><div class="fl">Demo Sched</div><div class="fp">NextLeap–ICP miss</div></div>
       <div class="fb"><div class="fn" style="color:#64748B">4</div><div class="fl">Parked</div><div class="fp">future req</div></div>
-      <div class="fb"><div class="fn" style="color:#64748B">3</div><div class="fl">MQL</div><div class="fp">unworked</div></div>
+      <div class="fb"><div class="fn" style="color:#64748B">1</div><div class="fl">MQL</div><div class="fp">unworked</div></div>
     </div>
-    <div class="ins ir" style="margin-top:8px"><strong>70.4% of Mar 18+ leads (57/81) exited as Discard or DNP in under 12 days.</strong> Root cause: batch contained too many non-ICP leads (aerospace, IT services, SAP, HR staffing) that should have been filtered before dialling. Only 2 SQLs and 7 CBs from 81 leads = 11.1% warm conversion rate vs expected 20-25% for filtered D2C-only batches.</div>
+    <div class="ins ir" style="margin-top:8px"><strong>78% of Mar 18+ leads (78/100) exited as Discard or DNP in 13 days.</strong> Today's 19 new leads: 8 discarded (Aura Smart = ERP, Cardiac = healthcare B2B, IncBuddy, kristalball, Drona = B2B automation), 10 DNP. Only 2 warm (EldersIndia FU — but has CFO, should be discarded; SkoolBeep FU — EdTech B2B, weak). The batch continues to include too many non-D2C companies. Root cause = Apollo filter not tightened enough.</div>
   </div>
 </div>
 
 <div class="sec">
-  <div class="sec-hd"><span class="sbadge">S2</span><span class="stitle">Mar 18+ Discard Analysis — What Went Wrong</span></div>
-  <div class="sec-body">
-    <div class="two">
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px">Discard reason breakdown (30 discards)</div>
-        <div class="src-row"><div class="src-name">Not Interested</div><div class="src-bar"><div class="src-bf" style="width:73%;background:var(--red)"></div></div><div class="src-val" style="color:var(--red)">22</div></div>
-        <div class="src-row"><div class="src-name">Not our ICP</div><div class="src-bar"><div class="src-bf" style="width:10%;background:var(--amb)"></div></div><div class="src-val" style="color:var(--amb)">3</div></div>
-        <div class="src-row"><div class="src-name">Missing Contact</div><div class="src-bar"><div class="src-bf" style="width:7%;background:var(--blue)"></div></div><div class="src-val" style="color:var(--blue)">2</div></div>
-        <div class="src-row"><div class="src-name">Wrong Contact</div><div class="src-bar"><div class="src-bf" style="width:3%;background:var(--purp)"></div></div><div class="src-val" style="color:var(--purp)">1</div></div>
-        <div class="src-row"><div class="src-name">Unresponsive</div><div class="src-bar"><div class="src-bf" style="width:7%;background:var(--muted)"></div></div><div class="src-val" style="color:var(--muted)">2</div></div>
-        <div class="ins ia" style="margin-top:8px">22 of 30 discards (73.3%) are "Not Interested." In the broader pipeline, NI is only 25.3% of discards. The Mar 18+ batch had a higher NI rate because it included non-D2C companies that were called with D2C-specific hooks — the pitch didn't land because the category was wrong.</div>
-      </div>
-      <div>
-        <div style="font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px">Companies that should not have been dialled</div>
-        <table style="font-size:11px">
-          <tr><th>Company</th><th>Why wrong</th><th>BD</th></tr>
-          <tr><td>Okulo Aerospace</td><td><span class="tag tr2">Aerospace B2B</span></td><td>Sriharan</td></tr>
-          <tr><td>Varchas Aerospace (CB)</td><td><span class="tag tr2">Aerospace B2B</span></td><td>Raksha</td></tr>
-          <tr><td>NextLeap Aeronautics (DS!)</td><td><span class="tag tr2">4 accountants in-house</span></td><td>Sriharan</td></tr>
-          <tr><td>Zyple Software (SAP Partner)</td><td><span class="tag tr2">SAP firm</span></td><td>Raksha</td></tr>
-          <tr><td>iOSYS Software</td><td><span class="tag tr2">IT services</span></td><td>Raksha</td></tr>
-          <tr><td>SHRS HR Solutions</td><td><span class="tag tr2">HR staffing</span></td><td>Sriharan</td></tr>
-          <tr><td>Bang Design / Punt Partners</td><td><span class="tag tr2">Design agencies</span></td><td>Sriharan</td></tr>
-          <tr><td>Spear Growth</td><td><span class="tag tr2">Marketing agency</span></td><td>Pranshu</td></tr>
-          <tr><td>Agilemania</td><td><span class="tag tr2">IT consulting</span></td><td>Raksha</td></tr>
-          <tr><td>CENDROL Constructions</td><td><span class="tag tr2">Shut 5 years ago</span></td><td>Raksha</td></tr>
-          <tr><td>Analytics Drift / Jiraaf</td><td><span class="tag tr2">B2B SaaS / Fintech</span></td><td>Pranshu</td></tr>
-        </table>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="sec">
-  <div class="sec-hd"><span class="sbadge">S3</span><span class="stitle">Mar 18+ Active Leads — Full Tracking</span></div>
+  <div class="sec-hd"><span class="sbadge">S2</span><span class="stitle">Today's New Leads Analysis — 31 Mar (19 leads)</span></div>
   <div class="sec-body">
     <div class="three">
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Highest priority (warm + intent)</div>
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Worth dialling (potential ICP)</div>
         <div class="dc2 hot">
-          <div class="dn">Amaraa Fragrances · Raksha · SQL</div>
-          <div class="dm">Mar 30 · Fragrance D2C · Solo founder · Excel</div>
-          <div class="db">Amita managing everything solo via Excel. Pain confirmed. Proposal sent. Demo ASAP.</div>
-          <div class="da" style="color:var(--green)">→ Demo Tue/Wed. HOT.</div>
+          <div class="dn">HumbleBean Coffee · Sriharan · DNP</div>
+          <div class="dm">D2C Coffee · subscriptions + beans + equipment · ₹10L–₹50L/month</div>
+          <div class="db">D2C coffee brand, multi-SKU, subscriptions = recurring billing complexity. DNP today. Good ICP. Retry.</div>
+          <div class="da" style="color:var(--green)">→ Retry Apr 1 with coffee D2C reconciliation hook.</div>
+        </div>
+        <div class="dc2 hot">
+          <div class="dn">Un - The Upcycled Denim · Sriharan · DNP</div>
+          <div class="dm">D2C Fashion · Sustainable denim · ₹10L–₹50L/month</div>
+          <div class="db">D2C fashion, founder in meeting. Good ICP profile. Retry with fashion margin hook.</div>
+          <div class="da" style="color:var(--green)">→ Retry Apr 1 with fashion reconciliation hook.</div>
+        </div>
+        <div class="dc2 hot">
+          <div class="dn">Bryt Bazaar · Pranshu · DNP</div>
+          <div class="dm">ONDC-enabled dark store chain · multi-format retail · B2C</div>
+          <div class="db">Quick commerce D2C, 7 physical stores, multi-platform ONDC. Phone can't receive calls. Find alternate number.</div>
+          <div class="da" style="color:var(--amb)">→ Find alternate number. Multi-channel reconciliation hook.</div>
         </div>
         <div class="dc2">
-          <div class="dn">Sapience Agribusiness · Raksha · SQL</div>
-          <div class="dm">Mar 27 · B2B Consulting · Post-Mar 31 demo</div>
-          <div class="db">Somu Kumar: "lean but interested if automated." GST notice concern. Demo post-March 31. Qualify revenue first.</div>
-          <div class="da" style="color:var(--amb)">→ Demo post Apr 1. Qualify: D2C? Revenue?</div>
+          <div class="dn">Y&O · Pranshu · DNP</div>
+          <div class="dm">D2C Air Purifiers · ₹50L–₹1Cr/month</div>
+          <div class="db">D2C consumer electronics, multi-channel, ₹50L-₹1Cr/month. Disconnected after 4-5 rings.</div>
+          <div class="da" style="color:var(--blue)">→ Retry with electronics margin hook.</div>
         </div>
         <div class="dc2">
-          <div class="dn">Krishikan · Raksha · CB</div>
-          <div class="dm">Mar 27 · AgriTech B2B · CB after Mar 31</div>
-          <div class="db">Call back after March 31 committed. B2B agricultural services. Revenue fit possibly. Track B opener.</div>
-          <div class="da" style="color:var(--blue)">→ Call Apr 1. "Do you have a finance person in-house?"</div>
-        </div>
-        <div class="dc2">
-          <div class="dn">Helveticans · Raksha · FU</div>
-          <div class="dm">Mar 27 · "Actually looking for something like this"</div>
-          <div class="db">Verbatim buying signal. Monthly accountant, wants daily availability. Connect Thu/Fri.</div>
-          <div class="da" style="color:var(--green)">→ Call today. Direct demo ask.</div>
-        </div>
-        <div class="dc2">
-          <div class="dn">Sorele · Raksha · FU</div>
-          <div class="dm">Mar 27 · D2C accessories · Multi-channel (website+store+WA)</div>
-          <div class="db">Proposal sent. Sanchi reviewing. Multi-channel D2C, no finance visibility. FU call.</div>
-          <div class="da" style="color:var(--blue)">→ FU call Apr 1.</div>
+          <div class="dn">Decotales · Raksha · DNP</div>
+          <div class="dm">Home Decor D2C · Wall art/mirrors · ₹10L–₹50L/month</div>
+          <div class="db">D2C home decor, multiple SKUs and channels. Good ICP. DNP first attempt.</div>
+          <div class="da" style="color:var(--muted)">→ Retry Apr 1-2.</div>
         </div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Medium priority (warm, needs call)</div>
-        <div class="dc2">
-          <div class="dn">Healeo Nutrition · Pranshu · CB</div>
-          <div class="dm">Mar 19 · Nutraceuticals D2C · Amazon+Flipkart+Shopify</div>
-          <div class="db">Already using "Burien maps" but showed product interest. Multi-platform D2C. 11 days old, still in CB. Needs clean pitch on Amazon reconciliation specifically.</div>
-          <div class="da" style="color:var(--blue)">→ Call Apr 1. Amazon hook: "Are you recovering your TCS credits monthly?"</div>
+        <div style="font-size:11px;font-weight:700;color:var(--amb);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Qualify before retry</div>
+        <div class="dc2 warn">
+          <div class="dn">EldersIndia · Raksha · FU</div>
+          <div class="dm">FU today · BUT: "recently hired CFO"</div>
+          <div class="db">Food FMCG, ₹50L-₹1Cr/month. Good revenue. BUT founder explicitly said "recently hired CFO." Finance function being built in-house. Discard.</div>
+          <div class="da" style="color:var(--red)">→ Discard: CFO hired. Not our ICP.</div>
         </div>
-        <div class="dc2">
-          <div class="dn">Semis Foods · Pranshu · FU</div>
-          <div class="dm">Mar 24 · Plant-based D2C · Zepto+Blinkit+own site</div>
-          <div class="db">Quick commerce + own site = multi-channel reconciliation pain. She was in meeting. Strong ICP.</div>
-          <div class="da" style="color:var(--blue)">→ Call Apr 1. Quick commerce reconciliation hook.</div>
+        <div class="dc2 warn">
+          <div class="dn">SkoolBeep · Pranshu · FU</div>
+          <div class="dm">FU today · EdTech B2B SaaS · "have our systems"</div>
+          <div class="db">"We have our systems to track." They have built internal tools. Send details if interested. Low probability.</div>
+          <div class="da" style="color:var(--muted)">→ Low priority. One WA, no calls.</div>
         </div>
-        <div class="dc2">
-          <div class="dn">Pride Circle · Pranshu · FU</div>
-          <div class="dm">Mar 23 · DEI B2B Consulting · Project billing</div>
-          <div class="db">B2B consulting with project billing pain. Contacted Ramakrishna, sent details. Track B ICP. 2 DNPs.</div>
-          <div class="da" style="color:var(--muted)">→ Call Apr 1. "Do you have a finance person in-house?"</div>
+        <div class="dc2 warn">
+          <div class="dn">PYOR · Sriharan · DNP</div>
+          <div class="dm">Electric boat manufacturing D2C+B2B · ₹10L–₹50L/month</div>
+          <div class="db">Electric marine vehicles. Niche D2C+B2B hybrid. Wrong number initially. Re-qualify industry fit.</div>
+          <div class="da" style="color:var(--muted)">→ Qualify: do they sell on marketplaces?</div>
         </div>
-        <div class="dc2">
-          <div class="dn">Frantiger Consulting · Sriharan · CB</div>
-          <div class="dm">Mar 24 · B2B Consulting · Enquiry team gatekeeper</div>
-          <div class="db">Business enquiry team said will connect with Ankush if relevant. B2B consulting, ₹50L–₹1Cr/month. Track B opener.</div>
-          <div class="da" style="color:var(--muted)">→ Follow up via enquiry team Apr 1.</div>
+        <div class="dc2 warn">
+          <div class="dn">Sparsh Aerobotics · Pranshu · DNP</div>
+          <div class="dm">AgriTech drones · B2B Hardware + services</div>
+          <div class="db">Drone-based agricultural services. B2B hardware. Not D2C. Low ICP fit.</div>
+          <div class="da" style="color:var(--red)">→ Discard on next DNP. B2B hardware = non-ICP.</div>
         </div>
-        <div class="dc2">
-          <div class="dn">TRU Dwellings · Raksha · CB</div>
-          <div class="dm">Mar 27 · Real Estate B2B · Multi-city development</div>
-          <div class="db">Real estate developer, Hyderabad+Bangalore. Multi-project. Revenue ₹1-3Cr/month. CB committed. Non-standard ICP but high revenue complexity.</div>
-          <div class="da" style="color:var(--muted)">→ CB as committed. Qualify project-based pain.</div>
+        <div class="dc2 warn">
+          <div class="dn">Orbi Seeds International · Sriharan · DNP</div>
+          <div class="dm">B2B seeds / agri · ₹50L–₹1Cr/month</div>
+          <div class="db">B2B seed supply to farmers. No D2C or marketplace. ICP miss.</div>
+          <div class="da" style="color:var(--red)">→ Discard next attempt. B2B agri = non-ICP.</div>
         </div>
       </div>
       <div>
-        <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Park or deprioritise</div>
+        <div style="font-size:11px;font-weight:700;color:var(--red);margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px">Correctly discarded today</div>
         <div class="dc2 ign">
-          <div class="dn">NextLeap Aeronautics · Sriharan · DS</div>
-          <div class="dm">PARK · 4 accountants in-house · Demo waste</div>
-          <div class="da" style="color:var(--red)">→ Park immediately. Finance function fully staffed.</div>
+          <div class="dn">Aura Smart · Raksha · Discarded ✓</div>
+          <div class="dm">"Complete ERP system for financial system"</div>
+          <div class="db">Founder called back and confirmed full ERP in use for accounting. Correct discard. Strong signal detection.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">Varchas Aerospace · Raksha · CB</div>
-          <div class="dm">PARK · Aerospace B2B · "too many calls"</div>
-          <div class="da" style="color:var(--red)">→ Park after Apr 1 callback. Non-ICP category.</div>
+          <div class="dn">kristalball · Raksha · Discarded ✓</div>
+          <div class="dm">Fintech SaaS for hospitality · "doing similar thing"</div>
+          <div class="db">Financial analytics for hospitality = competitor/adjacent. Not our ICP. Correct discard.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">JF Biogas · Raksha · Parked</div>
-          <div class="dm">Parked · "Excel is fine, don't want automation"</div>
-          <div class="da" style="color:#666">→ Keep parked. Dr. Judeo resistant to automation.</div>
+          <div class="dn">IncBuddy · Pranshu · Discarded ✓</div>
+          <div class="dm">Spoke with right person · has finance team</div>
+          <div class="db">Right person reached. Has own finance setup. Correct discard after qualification call.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">Farmitopia · Raksha · Parked</div>
-          <div class="dm">Parked · Uses Zoho · Too small now</div>
-          <div class="da" style="color:#666">→ Monitor for scale signal. Re-engage when 2+ channels.</div>
+          <div class="dn">Cardiac Design Labs · Raksha · Discarded ✓</div>
+          <div class="dm">Healthcare B2B · Medical devices · B2G payment cycles</div>
+          <div class="db">Cardiac monitoring devices for hospitals. B2B healthcare = non-ICP. Correct discard.</div>
         </div>
         <div class="dc2 ign">
-          <div class="dn">EventShoppe · Raksha · Parked</div>
-          <div class="dm">Parked · Operations paused · Resume April end</div>
-          <div class="da" style="color:#666">→ CB first week of May.</div>
+          <div class="dn">Drona Automations · Sriharan · DNP</div>
+          <div class="dm">Industrial automation B2B · "not required"</div>
+          <div class="db">"As soon as I mentioned Virtual Accounting, he responded not required." Industrial B2B automation = non-ICP. Next touch = discard.</div>
+          <div class="da" style="color:var(--red)">→ Discard next attempt.</div>
         </div>
-        <div class="dc2 ign">
-          <div class="dn">Abekus · Raksha · Parked</div>
-          <div class="dm">Parked · "Too small, few months down the line"</div>
-          <div class="da" style="color:#666">→ Re-engage when LinkedIn headcount grows.</div>
-        </div>
-        <div class="dc2 ign">
-          <div class="dn">Craftech 360 · Pranshu · FU</div>
-          <div class="dm">FU · "Already have accounting team"</div>
-          <div class="da" style="color:var(--red)">→ Discard. In-house team confirmed.</div>
-        </div>
-        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:4px;margin-top:8px;text-transform:uppercase">MQL — Unworked (Low Priority)</div>
-        <div class="dc2 ign"><div class="dn">Axis Aerospace + nVipani Technology + Cove & Lane</div><div class="dm">MQL · Unworked · Low ICP</div><div class="db">Axis Aerospace = non-ICP. nVipani = IT. Cove & Lane = needs qualifying before dialling.</div></div>
+        <div class="ins ig" style="margin-top:8px"><strong>Quality of today's discards is improving.</strong> Raksha correctly identified 3 non-ICP leads with reasoning. Pranshu got one correct (IncBuddy). This qualification skill is the difference between 15% and 25% warm conversion rate.</div>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="ins ig" style="margin-top:12px">
-      <strong>Mar 18+ batch summary:</strong> From 81 leads — 2 SQLs (Amaraa + Sapience), 7 CBs (Krishikan, TRU Dwellings, Varchas, Brands of Bharat, Frantiger, Healeo, Dabble, mrobotics, cultees, bluemonkey), 7 FUs (Helveticans, Sorele, Pride Circle, Semis Foods, Paragon, Craftech, SHUBHARAMBH). Top 5 to convert this week: Amaraa Fragrances (demo), Helveticans (direct ask), Sapience (qualify+demo), Healeo (Amazon hook), Semis Foods (quick commerce hook). Tag Deal Source for all 81 before Friday.
+<div class="sec">
+  <div class="sec-hd"><span class="sbadge">S3</span><span class="stitle">Mar 18+ Active Pipeline — All Warm Leads Tracking</span></div>
+  <div class="sec-body">
+    <div class="two">
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px">High priority — demo ask Apr 1-3</div>
+        <table style="font-size:11px">
+          <tr><th>Lead</th><th>BD</th><th>Stage</th><th>Signal</th></tr>
+          <tr style="background:var(--gbg)"><td><strong>Amaraa Fragrances</strong></td><td>Raksha</td><td><span class="tag tg">SQL</span></td><td>Solo Excel founder · demo ASAP</td></tr>
+          <tr><td>Sapience Agribusiness</td><td>Raksha</td><td><span class="tag tb">SQL</span></td><td>Post-Apr 1 demo · qualify revenue</td></tr>
+          <tr style="background:var(--gbg)"><td><strong>Healeo Nutrition</strong></td><td>Pranshu</td><td><span class="tag ta">CB</span></td><td>Multi-platform D2C · Amazon hook</td></tr>
+          <tr><td>Krishikan</td><td>Raksha</td><td><span class="tag ta">CB</span></td><td>Apr 1 callback committed</td></tr>
+          <tr style="background:var(--gbg)"><td><strong>Helveticans</strong></td><td>Raksha</td><td><span class="tag tb">FU</span></td><td>"Looking for something like this"</td></tr>
+          <tr><td>Sorele</td><td>Raksha</td><td><span class="tag tb">FU</span></td><td>Multi-channel D2C · Proposal sent</td></tr>
+          <tr style="background:var(--gbg)"><td><strong>Semis Foods</strong></td><td>Pranshu</td><td><span class="tag tb">FU</span></td><td>Zepto+Blinkit+own site · Quick com</td></tr>
+          <tr><td>Pride Circle</td><td>Pranshu</td><td><span class="tag tb">FU</span></td><td>B2B consulting · Project billing</td></tr>
+        </table>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px">Parked / low priority</div>
+        <table style="font-size:11px">
+          <tr><th>Lead</th><th>BD</th><th>Stage</th><th>Reason</th></tr>
+          <tr><td>NextLeap Aeronautics</td><td>Sriharan</td><td><span class="tag tr2">DS → PARK</span></td><td>4 accountants in-house</td></tr>
+          <tr><td>Varchas Aerospace</td><td>Raksha</td><td><span class="tag ta">CB</span></td><td>Aerospace B2B · non-ICP</td></tr>
+          <tr><td>JF Biogas</td><td>Raksha</td><td><span class="tag tgr">Parked</span></td><td>"Excel fine, don't want automation"</td></tr>
+          <tr><td>Farmitopia</td><td>Raksha</td><td><span class="tag tgr">Parked</span></td><td>Uses Zoho · too small now</td></tr>
+          <tr><td>EventShoppe</td><td>Raksha</td><td><span class="tag tgr">Parked</span></td><td>Operations paused · resume May</td></tr>
+          <tr><td>Abekus</td><td>Raksha</td><td><span class="tag tgr">Parked</span></td><td>"Few months down the line"</td></tr>
+          <tr><td>Craftech 360</td><td>Pranshu</td><td><span class="tag tb">FU</span></td><td>Has accounting team → discard</td></tr>
+          <tr><td>EldersIndia</td><td>Raksha</td><td><span class="tag tr2">FU → DISCARD</span></td><td>CFO recently hired</td></tr>
+        </table>
+        <div class="ins ia" style="margin-top:6px">Apollo filter fix required: exclude companies with keywords "Finance Manager," "CFO," "ERP" in LinkedIn team before importing into pipeline. Would have prevented ~12 wasted dials from this batch.</div>
+      </div>
     </div>
   </div>
 </div>
 
 </div>
 <div class="footer">
-  <div>New Source Leads · Mar 18–30 · 81 total · 2 SQL · 7 CB · 7 FU · 70.4% disc/DNP · Tag Deal Source field NOW</div>
-  <div style="display:flex;gap:5px;flex-wrap:wrap">
-    <span class="fpill">Amaraa: demo ASAP</span><span class="fpill">Helveticans: hot intent</span><span class="fpill">NextLeap: park</span><span class="fpill">73.3% NI from batch = wrong ICP in list</span>
+  <div>New Source Leads · Mar 18–31 · 100 total · 2 SQL · 6 CB · 8 FU · 78% disc/DNP · Fix Apollo filter for Q1 FY27</div>
+  <div style="display:flex;gap:4px;flex-wrap:wrap">
+    <span class="fpill">Amaraa: demo ASAP</span><span class="fpill">Helveticans: hot intent</span><span class="fpill">NextLeap: park</span><span class="fpill">EldersIndia: discard (CFO)</span><span class="fpill">Tag Deal Source tonight</span>
   </div>
 </div>
 </div>
